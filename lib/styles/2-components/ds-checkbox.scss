@@ -1,0 +1,60 @@
+@import '../../scss/_styles.scss';
+
+.ds-checkbox-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  user-select: none;
+
+  .ds-checkbox {
+    cursor: pointer;
+    height: 31px;
+    width: 49px;
+    background: ds-color(neutral, 000);
+    border-radius: 15px;
+    border: 1px solid ds-color(neutral, 400);
+    box-sizing: border-box;
+    position: relative;
+  }
+
+  .ds-checkmark {
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+    background-color: ds-color(neutral, 000);
+    border-radius: 2px;
+    border: 1px solid ds-color(primary, 400);
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: ds-color(neutral, 000);
+    margin-right: ds-space(tight);
+  }
+
+  .ds-checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+  .ds-checkmark:after {
+    left: 9px;
+    top: 5px;
+
+  }
+
+  input[type=checkbox]:checked ~ .ds-checkmark {
+    background: ds-color(primary, 400);
+  }
+
+  input[type=checkbox]:checked ~ .ds-checkmark:after {
+    display: block;
+  }
+
+  input[type=checkbox] {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+  }
+}

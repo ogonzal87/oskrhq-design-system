@@ -6,7 +6,7 @@
   "scripts": {
     "build": "babel lib -d build",
     "lint": "eslint lib/**; exit 0",
-    "lint:watch": "esw -w lib/**",
+    "build:watch": "babel lib -w -d build",
     "prepublish": "npm run build"
   },
   "repository": {

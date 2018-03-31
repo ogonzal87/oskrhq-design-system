@@ -1,0 +1,24 @@
+@import '../../scss/_styles.scss';
+
+.ds-avatar {
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  object-fit: cover;
+  box-shadow: ds-depth(100);
+}
+
+.ds-avatar-small {
+  height: 32px;
+  width: 32px;
+}
+
+.ds-avatar-medium {
+  height: 64px;
+  width: 64px;
+}
+
+.ds-avatar-large {
+  height: 104px;
+  width: 104px;
+}

@@ -1,0 +1,25 @@
+.ds-text-area-container {
+  display: flex;
+  flex-direction: column;
+  margin: ds-space(base);
+
+  .ds-text-area-label {
+    color: ds-color(neutral, 600);
+    margin-bottom: ds-space(extra-tight);
+  }
+
+  .ds-text-area-field {
+    font-family: $ds-base-font-family;
+    border-radius: 3px;
+    border: 1px ds-color(neutral, 300) solid;
+    padding: ds-space(tight) ds-space(tight);
+
+    &:focus {
+      outline: ds-color(primary, 400) 1px solid;
+    }
+
+    &::placeholder {
+      color: ds-color(neutral, 300);
+    }
+  }
+}

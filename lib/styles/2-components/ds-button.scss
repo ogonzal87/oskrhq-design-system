@@ -1,0 +1,109 @@
+@import '../../scss/_styles.scss';
+
+.ds-btn {
+  height: 44px;
+  width: 100%;
+  border-radius: 3px;
+  transition: all ds-easing(base) ds-duration(base);
+  border: none;
+  box-sizing: border-box;
+
+  &:hover {
+    box-shadow: ds-depth(100);
+  }
+ }
+
+.ds-btn-primary {
+  color: ds-color(neutral, 000);
+  background: ds-color(primary, 400);
+
+  &:hover {
+    background: ds-color(primary, 300);
+  }
+
+  &:active {
+    background: ds-color(primary, 500);
+    box-shadow: ds-depth(000);
+  }
+}
+
+.ds-btn-secondary {
+  color: ds-color(neutral, 000);
+  background: ds-color(secondary, 400);
+
+  &:hover {
+    background: ds-color(secondary, 300);
+  }
+
+  &:active {
+    background: ds-color(secondary, 500);
+    box-shadow: ds-depth(000);
+  }
+}
+
+.ds-btn-success {
+  color: ds-color(success, 600);
+  background: ds-color(success, 400);
+
+  &:hover {
+    background: ds-color(success, 300);
+  }
+
+  &:active {
+    background: ds-color(success, 500);
+    box-shadow: ds-depth(000);
+  }
+}
+
+.ds-btn-danger {
+  color: ds-color(danger, 600);
+  background: ds-color(danger, 400);
+  
+  &:hover {
+    background: ds-color(danger, 300);
+  }
+
+  &:active {
+    background: ds-color(danger, 500);
+    box-shadow: ds-depth(000);
+  }
+}
+
+.ds-btn-info {
+  color: ds-color(neutral, 000);
+  background: ds-color(info, 400);
+
+  &:hover {
+    background: ds-color(info, 300);
+    color: ds-color(info, 600);
+  }
+
+  &:active {
+    background: ds-color(info, 500);
+    box-shadow: ds-depth(000);
+  }
+}
+
+.ds-btn-ghost {
+  color: ds-color(primary, 600);
+  background: transparent;
+  border: 2px solid ds-color(primary, 400);
+
+  &:hover {
+    background: ds-color(primary, 400);
+    color: ds-color(neutral, 000);
+  }
+
+  &:active {
+    background: ds-color(primary, 500);
+    box-shadow: ds-depth(000);
+  }
+}
+
+.ds-btn-small {
+  width: 144px;
+}
+
+.ds-btn-medium {
+  width: 280px;
+}
