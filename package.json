@@ -1,0 +1,49 @@
+{
+  "name": "oskrhq-design-system",
+  "version": "0.1.0",
+  "description": "A mostly reasonable although opinionated approach to building responsive Digital Interfaces sharing the same anatomy.",
+  "main": "build/index.js",
+  "scripts": {
+    "build": "babel lib -d build",
+    "lint": "eslint lib/**; exit 0",
+    "lint:watch": "esw -w lib/**",
+    "prepublish": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ogonzal87/oskrhq-design-system.git"
+  },
+  "keywords": [
+    "design-system",
+    "react",
+    "sass",
+    "styled-components",
+    "design",
+    "system",
+    "components",
+    "ui"
+  ],
+  "author": "Oscar Gonzalez <oscar@oskrhq.com> (https://www.oskrhq.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ogonzal87/oskrhq-design-system/issues"
+  },
+  "homepage": "https://github.com/ogonzal87/oskrhq-design-system#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.2",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "eslint": "^4.19.1",
+    "eslint-plugin-import": "^2.10.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.7.0",
+    "eslint-watch": "^3.1.4",
+    "polished": "^1.9.2",
+    "prop-types": "^15.6.1",
+    "react": "^16.3.0",
+    "react-dom": "^16.3.0",
+    "styled-components": "^3.2.5"
+  }
+}

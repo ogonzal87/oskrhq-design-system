@@ -1,0 +1,39 @@
+.ds-color-wrapper {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 80px;
+
+  img {
+    margin-bottom: 0;
+  }
+
+  h3 {
+    width: 687px;
+    color: ds-color(neutral, 500);
+    margin-bottom: 100px;
+    line-height: 43px;
+    font-weight: 300;
+  }
+
+  h4 {
+    margin-bottom: 32px;
+  }
+  
+  .brand-colors-container {
+    width: 286px;
+    margin-right: 100px;
+  }
+
+  .feedback-colors-container {
+    width: 381px;
+    margin-right: 100px;
+  }
+
+  .neutral-colors-container {
+    width: 80px;
+  }
+}
+
+.ds-usage-title {
+  margin-top: 100px;
+}

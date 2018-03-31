@@ -1,0 +1,9 @@
+$ds-left-nav-width: 350px;
+
+.ds-app-grid {
+  display: grid;
+  grid-template-columns: $ds-left-nav-width 1fr;
+  grid-template-areas: 
+    "ds-left-nav    ds-main-content";
+  grid-gap: 0;
+} 
