@@ -6,7 +6,7 @@
   "scripts": {
     "build": "babel lib -d build",
     "lint": "eslint lib/**; exit 0",
-    "build:watch": "babel lib -w -d build",
+    "lint:watch": "esw -w lib/**",
     "prepublish": "npm run build"
   },
   "repository": {
@@ -40,6 +40,7 @@
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.7.0",
     "eslint-watch": "^3.1.4",
+    "node-sass": "^4.8.3",
     "polished": "^1.9.2",
     "prop-types": "^15.6.1",
     "react": "^16.3.0",
