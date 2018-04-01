@@ -1,13 +1,10 @@
 {
   "name": "oskrhq-design-system",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A mostly reasonable although opinionated approach to building responsive Digital Interfaces sharing the same anatomy.",
-  "main": "build/index.js",
+  "main": "lib/index.js",
   "scripts": {
-    "build": "babel lib -d build",
-    "lint": "eslint lib/**; exit 0",
-    "lint:watch": "esw -w lib/**",
-    "prepublish": "npm run build"
+
   },
   "repository": {
     "type": "git",
