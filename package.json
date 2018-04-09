@@ -1,6 +1,6 @@
 {
   "name": "oskrhq-design-system",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "A mostly reasonable although opinionated approach to building responsive Digital Interfaces sharing the same anatomy.",
   "main": "lib/index.js",
   "scripts": {
