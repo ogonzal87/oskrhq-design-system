@@ -99,9 +99,11 @@
 }
 
 .ds-btn-small {
-  width: 144px;
+  min-width: 144px;
+  max-width: 179px;
 }
 
 .ds-btn-medium {
-  width: 280px;
+  max-width: 264px;
+  min-width: 180px;
 }
