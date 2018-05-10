@@ -16,14 +16,14 @@ npm i --save oskrhq-design-system
 2. Include any of the provided components in your project:
 
 ```javascript
-import {DSAvatar, DSButton, DSCircleButton} from '*./node_modules/oskrhq-design-system/build/index.js';
+import {DSAvatar, DSButton, DSRadio} from '*./node_modules/oskrhq-design-system/build/index.js';
 ```
 
 3. Tell React to render the element in the DOM:
 
 ```javascript
 ReactDOM.render(
-    <DSButton label="press me!" type="primary" onClick={() => alert('Button clicked!')} />,
+    <DSButton type="primary" onClick={() => alert('Button clicked!')}>Press Me</DSButton>,
   document.querySelector('#app')
 );
 ```
