@@ -10,13 +10,13 @@ npm i --save oskrhq-design-system
 1. Include the CSS Architecture in your SCSS files:
 
 ```scss
-@import '*./node_modules/oskrhq-design-system/lib/styles/styles.scss';
+@import 'node_modules/oskrhq-design-system/styles/styles.scss';
 ```
 
 2. Include any of the provided components in your project:
 
 ```javascript
-import {DSAvatar, DSButton, DSRadio} from '*./node_modules/oskrhq-design-system/build/index.js';
+import {DSAvatar, DSButton, DSRadio} from 'oskrhq-design-system';
 ```
 
 3. Tell React to render the element in the DOM:
