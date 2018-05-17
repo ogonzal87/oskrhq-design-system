@@ -267,12 +267,12 @@ $ds-font-weight-data: (
   text-rendering: optimizeLegibility;
 }
 
-@mixin ds-link-text-style($color: $ds-base-text-color, $weight: base) {
+@mixin ds-link-text-style($color: $ds-base-link-text-color, $weight: base) {
   line-height: ds-line-height(link);
   font-weight: ds-font-weight(link, $weight);
   color:       $ds-brand-text-color;
   font-family: $ds-base-font-family;
-  color: $color;
+  color: $ds-base-link-text-color;
   text-rendering: optimizeLegibility;
   cursor: pointer;
 }
