@@ -451,7 +451,7 @@ $easing-data: (
 ```
 
 ## Usage
-I make use of Sass functions specify the space I want to apply to objects in our mark up. 
+I make use of Sass functions specify the time and how things should move from one state to another. 
 
 ### Functions
 
