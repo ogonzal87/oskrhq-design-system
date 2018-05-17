@@ -380,6 +380,94 @@ Applies spacing rules to a CSS property. `$space` refers to the scale in 8px of 
 * [The Layout System](https://material.io/design/layout/understanding-layout.html#usage)
 
 
+
+
+
+
+# Depth
+
+OSKRHQ.DS uses z-axis to declare hierarchy.  
+
+## Spacing System
+OSKRHQ.DS provides a predictable scale for depth. The higher the number, the closer the item will appear to the user: 
+
+```scss
+$shadows-data: (
+  500: (0 27px 24px 0 rgba(0, 0, 0, 0.24), 0 40px 77px 0 rgba(0, 0, 0, 0.19)),
+  400: (0 16px 28px 0 rgba(0, 0, 0, 0.24), 0 25px 55px 0 rgba(0, 0, 0, 0.19)),
+  300: (0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19)),
+  200: (0 6px 20px 0 rgba(0, 0, 0, 0.24), 0 8px 17px 0 rgba(0, 0, 0, 0.19)),
+  100: (0 1px 5px 0 rgba(0, 0, 0, 0.13), 0 2px 4px 0 rgba(0, 0, 0, 0.2)),
+  000: 0 0 0 0 transparent
+);
+
+```
+
+## Usage
+I make use of Sass functions specify the space I want to apply to objects in our mark up. 
+
+### Functions
+
+#### `ds-space($depth)`
+Applies box-shadow rules to the CSS property. `$depth` refers to the how high an item will appear.
+
+```sass
+.div-container {
+    box-shadow: ds-depth(300); // returns a pixels and an rgba value;
+}
+```
+
+
+
+
+
+# Motion
+
+OSKRHQ.DS uses motion to mimic the natural world.   
+
+## Spacing System
+OSKRHQ.DS provides a predictable scale for both easing and duration:
+
+```scss
+$unit: 100ms;
+
+$duration-data: (
+  fast: $unit,
+  base: $unit * 2,
+  slow: $unit * 3,
+  slower: $unit * 4,
+  slowest: $unit * 5,
+);
+
+
+$easing-data: (
+  base: cubic-bezier(0.64, 0, 0.35, 1),
+  in: cubic-bezier(0.36, 0, 1, 1),
+  out: cubic-bezier(0, 0, 0.42, 1),
+  excite: cubic-bezier(0.18, 0.67, 0.6, 1.22),
+  overshoot: cubic-bezier(0.07, 0.28, 0.32, 1.22),
+  anticipate: cubic-bezier(0.38, -0.4, 0.88, 0.65),
+);
+```
+
+## Usage
+I make use of Sass functions specify the space I want to apply to objects in our mark up. 
+
+### Functions
+
+#### `ds-easing($variant)`
+Applies transitions rules to the CSS property. `$variant` refers to the how the element should move or get to the desired state/position.
+
+#### `ds-duration($variant)`
+Applies transition rules to the CSS property. `$variant` refers to the how long the element should take to get to the desired state/position.
+
+```sass
+.div-container {
+    transition: all ds-easing(in) ds-duration(slowest); // returns a cubic-bezier and the duration in ms.
+}
+```
+
+
  
 
 

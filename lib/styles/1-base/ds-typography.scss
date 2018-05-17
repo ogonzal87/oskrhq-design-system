@@ -17,88 +17,36 @@ html {
 
 // Data for each Type Style defined in the Style Sheet. 
 $ds-font-size-data: (
-  display4: (
-    base: $ds-base-font-size * 8
-  ),
-  display3: (
-    base: $ds-base-font-size * 4
-  ),
-  display2: (
-    base: $ds-base-font-size * 3.21
-  ),  
-  display1: (
-    base: $ds-base-font-size  * 2.43
-  ),
-  headline: (
-    base: $ds-base-font-size * 1.72
-  ),
-  title: (
-    base: $ds-base-font-size * 1.43
-  ),
-  subheading: (
-    base: $ds-base-font-size * 1.14
-  ),
-  body2: (
-    base: $ds-base-font-size 
-  ),
-  body1: (
-    base: $ds-base-font-size 
-  ),
-  caption: (
-    base:  $ds-base-font-size * 0.857
-  ),
-  button: (
-    base:  $ds-base-font-size 
-  ),
-  link: (
-    base: $ds-base-font-size 
-  ),
-  list: (
-    base: $ds-base-font-size
-  )
+  display4: $ds-base-font-size * 8,
+  display3: $ds-base-font-size * 4,
+  display2: $ds-base-font-size * 3.21,
+  display1: $ds-base-font-size  * 2.43,
+  headline: $ds-base-font-size * 1.72, 
+  title: $ds-base-font-size * 1.43,
+  subheading: $ds-base-font-size * 1.14,
+  body2: $ds-base-font-size,
+  body1: $ds-base-font-size,
+  caption: $ds-base-font-size * 0.857,
+  button: $ds-base-font-size,
+  link: $ds-base-font-size,
+  list: $ds-base-font-size
 );
 
 // Data for each Type Style defined in the Style Sheet. 
 $ds-line-height-data: (
-  display4: (
-    base: normal
-  ),
-  display3: (
-    base: normal
-  ),
-  display2: (
-    base: normal
-  ),  
-  display1: (
-    base: normal
-  ),
-  headline: (
-    base: normal
-  ),
-  title: (
-    base: normal
-  ),
-  subheading: (
-    base: 1.6
-  ),
-  body2: (
-    base: 1.5
-  ),
-  body1: (
-    base: 1.5 
-  ),
-  caption: (
-    base:  1.5
-  ),
-  button: (
-    base:  1.5
-  ),
-  link: (
-    base: 1.5
-  ),
-  list: (
-    base: 1.5
-  )
+  display4: normal,
+  display3: normal,
+  display2: normal,
+  display1: normal,
+  headline: normal,
+  title: normal,
+  subheading: 1.6,
+  body2: 1.5,
+  body1: 1.5,
+  caption: 1.5,
+  button: 1.5,
+  link: 1.5,
+  list: 1.5
 );
 
 
@@ -177,152 +125,164 @@ $ds-font-weight-data: (
 /// Utility Typographic Functions
 /////////////////////////////////////////////////////////////////////////////
 
-/// Returns the line height for a given text style and variant.
+/// Returns the font size for a given range.
 ///
-/// @param {String} $style - The font style.
-/// @param {String} $variant [base] - The variant on the font-size.
-/// @return {Number} The line-height for the text-style.
-@function ds-line-height($style, $variant: base) {
-  $fetched-line-height: map-get(map-get($ds-line-height-data, $style), $variant);
-  @if type-of($fetched-line-height) != null {
-    @return $fetched-line-height;
-  } @else {
-    @error 'Line height `#{$style} - #{$variant}` not found. Available line heights: #{available-names($ds-line-height-data)}';
-  }
-}
-/// Returns the font size for a given text style and variant.
-///
-/// @param {String} $style - The font style.
-/// @param {String} $variant [base] - The variant on the font-size.
+/// @param {Number} $range - The font style.
 /// @return {Number} The font-size for the text-style.
-@function ds-font-size($style, $variant: base) {
-  $fetched-font-size: map-get(map-get($ds-font-size-data, $style), $variant);
+@function ds-font-size($range) {
+  $fetched-font-size: map-get($ds-font-size-data, $range);
   @if type-of($fetched-font-size) != null {
     @return $fetched-font-size;
   } @else {
-    @error 'Font size `#{$style} - #{$variant}` not found. Available font sizes: #{available-names($ds-font-size-data)}';
-  }
-}
-/// Returns the font size for a given text style and variant.
-///
-/// @param {String} $style - The font style.
-/// @param {String} $variant [base] - The variant on the font-size.
-/// @return {Number} The font-size for the text-style.
-@function ds-font-weight($style, $variant: base) {
-  $fetched-font-weight: map-get(map-get($ds-font-weight-data, $style), $variant);
-  @if type-of($fetched-font-weight) != null {
-    @return $fetched-font-weight;
-  } @else {
-    @error 'Font weight `#{$style} - #{$variant}` not found. Available font weights: #{available-names($ds-font-weight-data)}';
+    @error 'Font size `#{$range}` not found. Available font sizes: #{available-names($ds-font-size-data)}';
   }
 }
 
+/// Returns the line height for a given range.
+///
+/// @param {Number} $style - The font style.
+/// @return {Number} The line-height for the text-style.
+@function ds-line-height($style: normal) {
+  $fetched-line-height: map-get($ds-line-height-data, $style);
+  @if type-of($fetched-line-height) != null {
+    @return $fetched-line-height;
+  } @else {
+    @error 'Line height `#{$style}` not found. Available line heights: #{available-names($ds-line-height-data)}';
+  }
+}
+
+/// Returns the font weight for a given weight definition.
+///
+/// @param {String} $style - The font style.
+/// @param {String} $weight - The font weight.
+/// @return {Number} The font-weight for the text-weight.
+@function ds-font-weight($style, $weight: base) {
+  $fetched-font-weight: map-get(map-get($ds-font-weight-data, $style), $weight);
+  @if type-of($fetched-font-weight) != null {
+    @return $fetched-font-weight;
+  } @else {
+    @error 'Font weight `#{$style} - #{$weight}` not found. Available font weights: #{available-names($ds-font-weight-data)}';
+  }
+}
 
 /////////////////////////////////////////////////////////////////////////////
 /// Mixins for each Typographic Style. These map directly to the Website's Style Sheet.
 ///////////////////////////////////////////////////////////////////////////// 
 
-@mixin ds-display4-text-style() {
-  font-size:   ds-font-size(display4, base);
-  line-height: ds-line-height(display4, base);
-  font-weight: ds-font-weight(display4, light);
+@mixin ds-display4-text-style($color: $ds-base-text-color, $weight: light) {
+  font-size:   ds-font-size(display4);
+  line-height: ds-line-height(display4);
+  font-weight: ds-font-weight(display4, $weight);
   font-family: $ds-base-font-family;
+  color: $color;
   text-rendering: optimizeLegibility;
 }
 
-@mixin ds-display3-text-style() {
-  font-size:   ds-font-size(display3, base);
-  line-height: ds-line-height(display3, base);
-  font-weight: ds-font-weight(display3, base);
+@mixin ds-display3-text-style($color: $ds-base-text-color, $weight: base) {
+  font-size:   ds-font-size(display3);
+  line-height: ds-line-height(display3);
+  font-weight: ds-font-weight(display3, $weight);
   font-family: $ds-base-font-family;
+  color: $color;
   text-rendering: optimizeLegibility;
 }
 
-@mixin ds-display2-text-style() {
-  font-size:   ds-font-size(display2, base);
-  line-height: ds-line-height(display2, base);
-  font-weight: ds-font-weight(display2, base);
+@mixin ds-display2-text-style($color: $ds-base-text-color, $weight: base) {
+  font-size:   ds-font-size(display2);
+  line-height: ds-line-height(display2);
+  font-weight: ds-font-weight(display2, $weight);
   font-family: $ds-base-font-family;
+  color: $color;
   text-rendering: optimizeLegibility;
 }
 
-@mixin ds-display1-text-style() {
-  font-size:   ds-font-size(display1, base);
-  line-height: ds-line-height(display1, base);
-  font-weight: ds-font-weight(display1, base);
+@mixin ds-display1-text-style($color: $ds-base-text-color, $weight: base) {
+  font-size:   ds-font-size(display1);
+  line-height: ds-line-height(display1);
+  font-weight: ds-font-weight(display1, $weight);
   font-family: $ds-base-font-family;
+  color: $color;
   text-rendering: optimizeLegibility;
 }
 
-@mixin ds-headline-text-style() {
-  font-size:   ds-font-size(headline, base);
-  line-height: ds-line-height(headline, base);
-  font-weight: ds-font-weight(headline, base);
+@mixin ds-headline-text-style($color: $ds-base-text-color, $weight: base) {
+  font-size:   ds-font-size(headline);
+  line-height: ds-line-height(headline);
+  font-weight: ds-font-weight(headline, $weight);
   font-family: $ds-base-font-family;
+  color: $color;
   text-rendering: optimizeLegibility;
 }
 
-@mixin ds-title-text-style() {
-  font-size:   ds-font-size(title, base);
-  line-height: ds-line-height(title, base);
-  font-weight: ds-font-weight(title, bold);
+@mixin ds-title-text-style($color: $ds-base-text-color, $weight: bold) {
+  font-size:   ds-font-size(title);
+  line-height: ds-line-height(title);
+  font-weight: ds-font-weight(title, $weight);
   font-family: $ds-base-font-family;
+  color: $color;
   text-rendering: optimizeLegibility;
 }
 
-@mixin ds-subheading-text-style() {
-  font-size:   ds-font-size(subheading, base);
-  line-height: ds-line-height(subheading, base);
-  font-weight: ds-font-weight(subheading, base);
+@mixin ds-subheading-text-style($color: $ds-base-text-color, $weight: base) {
+  font-size:   ds-font-size(subheading);
+  line-height: ds-line-height(subheading);
+  font-weight: ds-font-weight(subheading, $weight);
   font-family: $ds-base-font-family;
+  color: $color;
   text-rendering: optimizeLegibility;
 }
 
-@mixin ds-body2-text-style() {
-  font-size:   ds-font-size(body2, base);
-  line-height: ds-line-height(body2, base);
-  font-weight: ds-font-weight(body2, bold);
+@mixin ds-body2-text-style($color: $ds-base-text-color, $weight: bold) {
+  font-size:   ds-font-size(body2);
+  line-height: ds-line-height(body2);
+  font-weight: ds-font-weight(body2, $weight);
   font-family: $ds-base-font-family;
+  color: $color;
 }
 
-@mixin ds-body1-text-style() {
-  font-size:   ds-font-size(body1, base);
-  line-height: ds-line-height(body1, base);
-  font-weight: ds-font-weight(body1, base);
+@mixin ds-body1-text-style($color: $ds-base-text-color, $weight: base) {
+  font-size:   ds-font-size(body1);
+  line-height: ds-line-height(body1e);
+  font-weight: ds-font-weight(body1, $weight);
   font-family: $ds-base-font-family;
+  color: $color;
   text-rendering: optimizeLegibility;
 }
 
-@mixin ds-caption-text-style() {
-  font-size:   ds-font-size(caption, base);
-  line-height: ds-line-height(caption, base);
-  font-weight: ds-font-weight(caption, base);
+@mixin ds-caption-text-style($color: $ds-base-text-color, $weight: base) {
+  font-size:   ds-font-size(caption);
+  line-height: ds-line-height(caption);
+  font-weight: ds-font-weight(caption, $weight);
   font-family: $ds-base-font-family;
+  color: $color;
   text-rendering: optimizeLegibility;
 }
 
-@mixin ds-button-text-style() {
-  font-size:   ds-font-size(button, base);
-  line-height: ds-line-height(button, base);
-  font-weight: ds-font-weight(button, base);
+@mixin ds-button-text-style($color: $ds-base-text-color, $weight: base) {
+  font-size:   ds-font-size(button);
+  line-height: ds-line-height(button);
+  font-weight: ds-font-weight(button, $weight);
   font-family: $ds-base-font-family;
+  color: $color;
   text-rendering: optimizeLegibility;
 }
 
-@mixin ds-link-text-style() {
-  line-height: ds-line-height(link, base);
-  font-weight: ds-font-weight(link, base);
+@mixin ds-link-text-style($color: $ds-base-text-color, $weight: base) {
+  line-height: ds-line-height(link);
+  font-weight: ds-font-weight(link, $weight);
   color:       $ds-brand-text-color;
   font-family: $ds-base-font-family;
+  color: $color;
   text-rendering: optimizeLegibility;
   cursor: pointer;
 }
 
-@mixin ds-list-text-style() {
-  font-size:   ds-font-size(list, base);
-  line-height: ds-line-height(list, base);
-  font-weight: ds-font-weight(list, base);
+@mixin ds-list-text-style($color: $ds-base-text-color, $weight: base) {
+  font-size:   ds-font-size(list);
+  line-height: ds-line-height(list);
+  font-weight: ds-font-weight(list, $weight);
   font-family: $ds-base-font-family;
+  color: $color;
   text-rendering: optimizeLegibility;
 }
 

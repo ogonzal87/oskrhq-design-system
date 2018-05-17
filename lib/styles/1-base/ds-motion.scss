@@ -33,7 +33,7 @@ $easing-data: (
   }
 }
 
-/// Returns the timing-function value for a given variant.
+/// Returns a cubic-bezier value for a given variant.
 ///
 /// @param {String} $variant - The key for the given variant.
 /// @return {String} The cubic-bezier function (string) for the variant.

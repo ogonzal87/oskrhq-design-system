@@ -89,39 +89,19 @@ html {
 /// Returns the color value for a given color name and group.
 ///
 /// @param {String} $hue - The color's hue.
-/// @param {String} $value - The darkness/lightness of the color. Defaults to base.
-/// @param {Color} $for-background - The background color on which this color will
-/// appear. Applies a multiply filter to ensure appropriate contrast.
+/// @param {Number} $range - The darkness/lightness of the color. Defaults to base. The higher the number, the darker the color.
 /// @return {Color} The color value.
 
-@function ds-color($hue, $value: 700, $for-background: null) {
-  $fetched-color: map-get(map-get($ds-color-palette-data, $hue), $value);
+@function ds-color($hue, $range: 400) {
+  $fetched-color: map-get(map-get($ds-color-palette-data, $hue), $range);
 
   @if map-has-key($ds-color-palette-data, $fetched-color) {
-    $fetched-color: map-get(map-get($ds-color-palette-data, $fetched-color), $value);
-  }
-
-  @if $for-background != null {
-    $fetched-color: color-multiply($fetched-color, $for-background);
+    $fetched-color: map-get(map-get($ds-color-palette-data, $fetched-color), $range);
   }
 
   @if type-of($fetched-color) == color {
     @return $fetched-color;
   } @else {
-    @error 'Color `#{$hue} - #{$value}` not found. Available colors: #{available-names($ds-color-palette-data)}';
+    @error 'Color `#{$hue} - #{$range}` not found. Available colors: #{available-names($ds-color-palette-data)}';
   }
 }
-
-// Darkens the foreground color by the background color. This is the same as the
-/// “multiply” filter in graphics apps.
-///
-/// @param {Color} $foreground - The color to darken.
-/// @param {Color} $background - The background to base darkening on.
-/// @return {Color} The modified color.
-@function ds-color-multiply($foreground, $background: null) {
-  @if $background == null {
-    $background: #ffffff;
-  }
-  @return $foreground * $background / 255;
-}
-
