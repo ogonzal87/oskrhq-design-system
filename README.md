@@ -235,94 +235,121 @@ Applies a line height from the allowed line heights in the system to a CSS prope
 
 ### Mixins
 
-#### `ds-h1-text-style($color, $weight)`
+#### `ds-display4-text-style($color, $weight)`
 Applies all the text styling needed by Typographic Style defined in the system to a CSS declaration. `$color` refers to the color in the system you want to use - optional. `$weight` refers to the weight in the system you would like to use - optional. 
 
 ```sass
 .div-container {
-    @include ds-h1-text-style(ds-color(brand, 600), bold);
+    @include ds-display4-text-style(ds-color(brand, 600), bold);
 }
 ```
 
-#### `ds-h2-text-style($color, $weight)`
+#### `ds-display3-text-style($color, $weight)`
 Applies all the text styling needed by Typographic Style defined in the system to a CSS declaration. `$color` refers to the color in the system you want to use - optional. `$weight` refers to the weight in the system you would like to use - optional. 
 
 ```sass
 .div-container {
-    @include ds-h2-text-style(ds-color(brand, 600), bold);
+    @include ds-display3-text-style(ds-color(brand, 600), bold);
 }
 ```
 
-#### `ds-h3-text-style($color, $weight)`
+#### `ds-display2-text-style($color, $weight)`
 
 Applies all the text styling needed by Typographic Style defined in the system to a CSS declaration. `$color` refers to the color in the system you want to use - optional. `$weight` refers to the weight in the system you would like to use - optional. 
 
 ```sass
 .div-container {
-    @include ds-h3-text-style(ds-color(brand, 600), bold);
+    @include ds-display2-text-style(ds-color(brand, 600), bold);
 }
 ```
 
-#### `ds-h4-text-style($color, $weight)`
+#### `ds-display1-text-style($color, $weight)`
 Applies all the text styling needed by Typographic Style defined in the system to a CSS declaration. `$color` refers to the color in the system you want to use - optional. `$weight` refers to the weight in the system you would like to use - optional. 
 
 ```sass
 .div-container {
-    @include ds-h4-text-style(ds-color(brand, 600), bold);
+    @include ds-display1-text-style(ds-color(brand, 600), bold);
 }
 ```
 
-#### `ds-h5-text-style($color, $weight)`
+#### `ds-headline-text-style($color, $weight)`
 Applies all the text styling needed by Typographic Style defined in the system to a CSS declaration. `$color` refers to the color in the system you want to use - optional. `$weight` refers to the weight in the system you would like to use - optional. 
 
 ```sass
 .div-container {
-    @include ds-h5-text-style(ds-color(brand, 600), bold);
+    @include ds-headline-text-style(ds-color(brand, 600), bold);
 }
 ```
 
-#### `ds-section-header-text-style($color, $weight)`
+#### `ds-title-text-style($color, $weight)`
 Applies all the text styling needed by Typographic Style defined in the system to a CSS declaration. `$color` refers to the color in the system you want to use - optional. `$weight` refers to the weight in the system you would like to use - optional. 
 
 ```sass
 .div-container {
-    @include ds-section-header-text-style(ds-color(brand, 600), bold);
+    @include ds-title-text-style(ds-color(brand, 600), bold);
 }
 ```
 
-#### `ds-body-text-style($color, $weight)`
+#### `ds-subheading-text-style($color, $weight)`
 Applies all the text styling needed by Typographic Style defined in the system to a CSS declaration. `$color` refers to the color in the system you want to use - optional. `$weight` refers to the weight in the system you would like to use - optional. 
 
 ```sass
 .div-container {
-    @include ds-body-text-style(ds-color(brand, 600), bold);
+    @include ds-subheading-text-style(ds-color(brand, 600), bold);
 }
 ```
 
-#### `ds-body-small-text-style($color, $weight)`
+#### `ds-body2-text-style($color, $weight)`
 Applies all the text styling needed by Typographic Style defined in the system to a CSS declaration. `$color` refers to the color in the system you want to use - optional. `$weight` refers to the weight in the system you would like to use - optional. 
 
 ```sass
 .div-container {
-    @include ds-body-small-text-style(ds-color(brand, 600), bold);
+    @include ds-body2-small-text-style(ds-color(brand, 600), bold);
 }
 ```
 
-#### `ds-body-list-text-style($color, $weight)`
+#### `ds-body1-text-style($color, $weight)`
 Applies all the text styling needed by Typographic Style defined in the system to a CSS declaration. `$color` refers to the color in the system you want to use - optional. `$weight` refers to the weight in the system you would like to use - optional. 
 
 ```sass
 .div-container {
-    @include ds-body-list-text-style(ds-color(brand, 600), bold);
+    @include ds-body1-text-style(ds-color(brand, 600), bold);
 }
 ```
 
-#### `ds-body-link-text-style($weight)`
+#### `ds-caption-text-style($weight)`
 Applies all the text styling needed by Typographic Style defined in the system to a CSS declaration. `$color` refers to the color in the system you want to use - optional. `$weight` refers to the weight in the system you would like to use - optional. 
 
 ```sass
 .div-container {
-    @include ds-body-link-text-style(ds-color(brand, 600), bold);
+    @include ds-caption-text-style(ds-color(brand, 600), bold);
+}
+```
+
+#### `ds-button-text-style($weight)`
+Applies all the text styling needed by Typographic Style defined in the system to a CSS declaration. `$color` refers to the color in the system you want to use - optional. `$weight` refers to the weight in the system you would like to use - optional. 
+
+```sass
+.div-container {
+    @include ds-button-text-style(ds-color(brand, 600), bold);
+}
+```
+
+#### `ds-link-text-style($weight)`
+Applies all the text styling needed by Typographic Style defined in the system to a CSS declaration. `$color` refers to the color in the system you want to use - optional. `$weight` refers to the weight in the system you would like to use - optional. 
+
+```sass
+.div-container {
+    @include ds-link-text-style(ds-color(brand, 600), bold);
+}
+```
+
+#### `ds-list-text-style($weight)`
+Applies all the text styling needed by Typographic Style defined in the system to a CSS declaration. `$color` refers to the color in the system you want to use - optional. `$weight` refers to the weight in the system you would like to use - optional. 
+
+```sass
+.div-container {
+    @include ds-list-text-style(ds-color(brand, 600), bold);
 }
 ```
 
