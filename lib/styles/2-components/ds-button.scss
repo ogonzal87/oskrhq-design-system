@@ -1,10 +1,11 @@
 .ds-btn {
   height: 44px;
-  width: 100%;
+  min-width: ds-space(extra-loose);
   border-radius: 3px;
   transition: all ds-easing(base) ds-duration(base);
   border: none;
   box-sizing: border-box;
+  padding: 0 ds-space(base);
 
   &:hover {
     box-shadow: ds-depth(100);
@@ -106,4 +107,8 @@
 .ds-btn-medium {
   max-width: 264px;
   min-width: 180px;
+}
+
+.ds-btn-fluid {
+  width: 100%;
 }

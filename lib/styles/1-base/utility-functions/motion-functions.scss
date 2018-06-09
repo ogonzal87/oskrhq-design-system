@@ -1,0 +1,26 @@
+/// Returns the duration value for a given variant.
+///
+/// @param {String} $variant - The key for the given variant.
+/// @return {Number} The spacing for the variant (in milliseconds).
+
+@function ds-duration($variant: base) {
+  $fetched-value: map-get($ds-duration-data, $variant);
+
+  @if type-of($fetched-value) == number {
+    @return $fetched-value;
+  } @else {
+    @error 'Duration variant `#{$variant}` not found. Available variants: #{available-names($ds-duration-data)}';
+  }
+}
+/// Returns the timing-function value for a given variant.
+///
+/// @param {String} $variant - The key for the given variant.
+/// @return {String} The cubic-bezier function (string) for the variant.
+@function ds-easing($variant: base) {
+  $fetched-value: map-get($ds-easing-data, $variant);
+  @if type-of($fetched-value) == string {
+    @return $fetched-value;
+  } @else {
+    @error 'Easing variant `#{$variant}` not found. Available variants: #{available-names($ds-easing-data)}';
+  }
+}

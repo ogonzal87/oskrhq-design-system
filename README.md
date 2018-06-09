@@ -69,17 +69,18 @@ Applies a color from our palette to a CSS property. `$type` refers to the type o
 # Typography
 
 OSKRHQ.DS uses Lato as it Font Family with specific typographic styles that define a hierarchy for both mobile and web. 
-* Display4
-* Display3
-* Display2
-* Display1
-* Headline
-* Title
-* Subheading
+* H1
+* H2
+* H3
+* H4
+* H5
+* H6
+* subtitle1
 * Body2
 * Body1
 * Caption
 * Button
+* Overline
 * Link
 * List
 
@@ -89,20 +90,22 @@ Font size, font weight, and line-height have their own predictive scales.
 ### Font Size
 I use three digits to convey in size. The higher the range number, the higher the font-size. 
 ```scss
-$ds-base-font-size: 13px;
+$ds-base-font-size: 16px;
 
 $ds-font-size-data: (
-  display4: $ds-base-font-size * 8,
-  display3: $ds-base-font-size * 4,
-  display2: $ds-base-font-size * 3.21,
-  display1: $ds-base-font-size  * 2.43,
-  headline: $ds-base-font-size * 1.72, 
-  title: $ds-base-font-size * 1.43,
-  subheading: $ds-base-font-size * 1.14,
-  body2: $ds-base-font-size,
+  H1: $ds-base-font-size * 6,
+  H2: $ds-base-font-size * 3.75,
+  H3: $ds-base-font-size * 3,
+  H4: $ds-base-font-size  * 2.125,
+  H5: $ds-base-font-size * 1.5, 
+  H6: $ds-base-font-size * 1.25,
+  subtitle2: $ds-base-font-size * 0.875,
+  subtitle1: $ds-base-font-size,
+  body2: $ds-base-font-size * 0.875,
   body1: $ds-base-font-size,
   caption: $ds-base-font-size * 0.857,
-  button: $ds-base-font-size,
+  button: $ds-base-font-size * 0.857,
+  overline: $ds-base-font-size,
   link: $ds-base-font-size,
   list: $ds-base-font-size
 );
@@ -112,72 +115,10 @@ $ds-font-size-data: (
 For font-weight I use words.
 ```sass
 $ds-font-weight-data: (
-  display4: (
-    light: $ds-base-font-weight * .75,
-    base: $ds-base-font-weight,
-    semibold: $ds-base-font-weight * 1.5,
-    bold: $ds-base-font-weight * 2
-  ),
-  display3: (
-    base: $ds-base-font-weight,
-    semibold: $ds-base-font-weight * 1.5,
-    bold: $ds-base-font-weight * 2
-  ),
-  display2: (
-   base: $ds-base-font-weight,
-    semibold: $ds-base-font-weight * 1.5,
-    bold: $ds-base-font-weight * 2
-  ),  
-  display1: (
-    base: $ds-base-font-weight,
-    semibold: $ds-base-font-weight * 1.5,
-    bold: $ds-base-font-weight * 2
-  ),
-  headline: (
-    base: $ds-base-font-weight,
-    semibold: $ds-base-font-weight * 1.5,
-    bold: $ds-base-font-weight * 2
-  ),
-  title: (
-    base: $ds-base-font-weight,
-    semibold: $ds-base-font-weight * 1.5,
-    bold: $ds-base-font-weight * 2
-  ),
-  subheading: (
-    base: $ds-base-font-weight,
-    semibold: $ds-base-font-weight * 1.5,
-    bold: $ds-base-font-weight * 2
-  ),
-  body2: (
-    base: $ds-base-font-weight,
-    semibold: $ds-base-font-weight * 1.5,
-    bold: $ds-base-font-weight * 2
-  ),
-  body1: (
-    base: $ds-base-font-weight,
-    semibold: $ds-base-font-weight * 1.5,
-    bold: $ds-base-font-weight * 2
-  ),
-  caption: (
-    base: $ds-base-font-weight,
-    semibold: $ds-base-font-weight * 1.5,
-    bold: $ds-base-font-weight * 2
-  ),
-  button: (
-    base: $ds-base-font-weight,
-    semibold: $ds-base-font-weight * 1.5,
-    bold: $ds-base-font-weight * 2
-  ),
-  link: (
-    base: $ds-base-font-weight,
-    semibold: $ds-base-font-weight * 1.5,
-    bold: $ds-base-font-weight * 2
-  ),
-  list: (
-    base: $ds-base-font-weight,
-    semibold: $ds-base-font-weight * 1.5,
-    bold: $ds-base-font-weight * 2
-  )
+  bold: 900,
+  semibold: 600,
+  normal: 400,
+  light: 300
 );
 ```
 
@@ -185,17 +126,19 @@ $ds-font-weight-data: (
 I use three digits to convey in line-height. The higher the range number, the higher the line-height. 
 ```sass
 $ds-line-height-data: (
-  display4: normal,
-  display3: normal,
-  display2: normal,
-  display1: normal,
-  headline: normal,
-  title: normal,
-  subheading: 1.6,
+  H1: normal,
+  H2: normal,
+  H3: normal,
+  H4: normal,
+  H5: normal,
+  H6: normal,
+  subtitle2: 1.6,
+  subtitle1: 1.6,
   body2: 1.5,
   body1: 1.5,
   caption: 1.5,
   button: 1.5,
+  overline: 1.5,
   link: 1.5,
   list: 1.5
 );
@@ -235,67 +178,67 @@ Applies a line height from the allowed line heights in the system to a CSS prope
 
 ### Mixins
 
-#### `ds-display4-text-style($color, $weight)`
+#### `ds-H1-text-style($color, $weight)`
 Applies all the text styling needed by Typographic Style defined in the system to a CSS declaration. `$color` refers to the color in the system you want to use - optional. `$weight` refers to the weight in the system you would like to use - optional. 
 
 ```sass
 .div-container {
-    @include ds-display4-text-style(ds-color(brand, 600), bold);
+    @include ds-H1-text-style(bold);
 }
 ```
 
-#### `ds-display3-text-style($color, $weight)`
+#### `ds-H2-text-style($color, $weight)`
 Applies all the text styling needed by Typographic Style defined in the system to a CSS declaration. `$color` refers to the color in the system you want to use - optional. `$weight` refers to the weight in the system you would like to use - optional. 
 
 ```sass
 .div-container {
-    @include ds-display3-text-style(ds-color(brand, 600), bold);
+    @include ds-H2-text-style(ds-color(bold);
 }
 ```
 
-#### `ds-display2-text-style($color, $weight)`
+#### `ds-H3-text-style($color, $weight)`
 
 Applies all the text styling needed by Typographic Style defined in the system to a CSS declaration. `$color` refers to the color in the system you want to use - optional. `$weight` refers to the weight in the system you would like to use - optional. 
 
 ```sass
 .div-container {
-    @include ds-display2-text-style(ds-color(brand, 600), bold);
+    @include ds-H3-text-style(ds-color(bold);
 }
 ```
 
-#### `ds-display1-text-style($color, $weight)`
+#### `ds-H4-text-style($color, $weight)`
 Applies all the text styling needed by Typographic Style defined in the system to a CSS declaration. `$color` refers to the color in the system you want to use - optional. `$weight` refers to the weight in the system you would like to use - optional. 
 
 ```sass
 .div-container {
-    @include ds-display1-text-style(ds-color(brand, 600), bold);
+    @include ds-H4-text-style(ds-color(bold);
 }
 ```
 
-#### `ds-headline-text-style($color, $weight)`
+#### `ds-H5-text-style($color, $weight)`
 Applies all the text styling needed by Typographic Style defined in the system to a CSS declaration. `$color` refers to the color in the system you want to use - optional. `$weight` refers to the weight in the system you would like to use - optional. 
 
 ```sass
 .div-container {
-    @include ds-headline-text-style(ds-color(brand, 600), bold);
+    @include ds-H5-text-style(ds-color(bold);
 }
 ```
 
-#### `ds-title-text-style($color, $weight)`
+#### `ds-H6-text-style($color, $weight)`
 Applies all the text styling needed by Typographic Style defined in the system to a CSS declaration. `$color` refers to the color in the system you want to use - optional. `$weight` refers to the weight in the system you would like to use - optional. 
 
 ```sass
 .div-container {
-    @include ds-title-text-style(ds-color(brand, 600), bold);
+    @include ds-H6-text-style(ds-color(bold);
 }
 ```
 
-#### `ds-subheading-text-style($color, $weight)`
+#### `ds-subtitle1-text-style($color, $weight)`
 Applies all the text styling needed by Typographic Style defined in the system to a CSS declaration. `$color` refers to the color in the system you want to use - optional. `$weight` refers to the weight in the system you would like to use - optional. 
 
 ```sass
 .div-container {
-    @include ds-subheading-text-style(ds-color(brand, 600), bold);
+    @include ds-subtitle1-text-style(ds-color(bold);
 }
 ```
 
@@ -304,7 +247,7 @@ Applies all the text styling needed by Typographic Style defined in the system t
 
 ```sass
 .div-container {
-    @include ds-body2-small-text-style(ds-color(brand, 600), bold);
+    @include ds-body2-small-text-style(ds-color(bold);
 }
 ```
 
@@ -313,7 +256,7 @@ Applies all the text styling needed by Typographic Style defined in the system t
 
 ```sass
 .div-container {
-    @include ds-body1-text-style(ds-color(brand, 600), bold);
+    @include ds-body1-text-style(ds-color(bold);
 }
 ```
 
@@ -322,7 +265,7 @@ Applies all the text styling needed by Typographic Style defined in the system t
 
 ```sass
 .div-container {
-    @include ds-caption-text-style(ds-color(brand, 600), bold);
+    @include ds-caption-text-style(ds-color(bold);
 }
 ```
 
@@ -331,7 +274,7 @@ Applies all the text styling needed by Typographic Style defined in the system t
 
 ```sass
 .div-container {
-    @include ds-button-text-style(ds-color(brand, 600), bold);
+    @include ds-button-text-style(ds-color(bold);
 }
 ```
 
@@ -340,7 +283,7 @@ Applies all the text styling needed by Typographic Style defined in the system t
 
 ```sass
 .div-container {
-    @include ds-link-text-style(ds-color(brand, 600), bold);
+    @include ds-link-text-style(ds-color(bold);
 }
 ```
 
@@ -349,7 +292,7 @@ Applies all the text styling needed by Typographic Style defined in the system t
 
 ```sass
 .div-container {
-    @include ds-list-text-style(ds-color(brand, 600), bold);
+    @include ds-list-text-style(ds-color(bold);
 }
 ```
 

@@ -1,0 +1,133 @@
+@mixin ds-H1-text-style($weight: light) {
+  font-size:   ds-font-size(H1);
+  line-height: ds-line-height(H1);
+  font-weight: ds-font-weight($weight);
+  font-family: $ds-base-font-family;
+  letter-spacing: -1.5px;
+  text-rendering: optimizeLegibility;
+}
+
+@mixin ds-H2-text-style($weight: light) {
+  font-size:   ds-font-size(H2);
+  line-height: ds-line-height(H2);
+  font-weight: ds-font-weight($weight);
+  font-family: $ds-base-font-family;
+  letter-spacing: -0.5px;
+  text-rendering: optimizeLegibility;
+}
+
+@mixin ds-H3-text-style($weight: normal) {
+  font-size:   ds-font-size(H3);
+  line-height: ds-line-height(H3);
+  font-weight: ds-font-weight($weight);
+  font-family: $ds-base-font-family;
+  letter-spacing: 0px;
+  text-rendering: optimizeLegibility;
+}
+
+@mixin ds-H4-text-style($weight: normal) {
+  font-size:   ds-font-size(H4);
+  line-height: ds-line-height(H4);
+  font-weight: ds-font-weight($weight);
+  font-family: $ds-base-font-family;
+  letter-spacing: .25px;
+  text-rendering: optimizeLegibility;
+}
+
+@mixin ds-H5-text-style($weight: normal) {
+  font-size:   ds-font-size(H5);
+  line-height: ds-line-height(H5);
+  font-weight: ds-font-weight($weight);
+  font-family: $ds-base-font-family;
+  letter-spacing: 0px;
+  text-rendering: optimizeLegibility;
+}
+
+@mixin ds-H6-text-style($weight: semibold) {
+  font-size:   ds-font-size(H6);
+  line-height: ds-line-height(H6);
+  font-weight: ds-font-weight($weight);
+  font-family: $ds-base-font-family;
+  letter-spacing: .15px;
+  text-rendering: optimizeLegibility;
+}
+
+@mixin ds-subtitle2-text-style($weight: semibold) {
+  font-size:   ds-font-size(subtitle2);
+  line-height: ds-line-height(subtitle2);
+  font-weight: ds-font-weight($weight);
+  font-family: $ds-base-font-family;
+  letter-spacing: .1px;
+  text-rendering: optimizeLegibility;
+}
+
+@mixin ds-subtitle1-text-style($weight: normal) {
+  font-size:   ds-font-size(subtitle1);
+  line-height: ds-line-height(subtitle1);
+  font-weight: ds-font-weight($weight);
+  letter-spacing: .15px;
+  text-rendering: optimizeLegibility;
+}
+
+@mixin ds-body2-text-style($weight: normal) {
+  font-size:   ds-font-size(body2);
+  line-height: ds-line-height(body2);
+  font-weight: ds-font-weight($weight);
+  letter-spacing: 1px;
+  font-family: $ds-base-font-family;
+}
+
+@mixin ds-body1-text-style($weight: normal) {
+  font-size:   ds-font-size(body1);
+  line-height: ds-line-height(body1e);
+  font-weight: ds-font-weight($weight);
+  font-family: $ds-base-font-family;
+  letter-spacing: 1px;
+  text-rendering: optimizeLegibility;
+}
+
+@mixin ds-caption-text-style($weight: normal) {
+  font-size:   ds-font-size(caption);
+  line-height: ds-line-height(caption);
+  font-weight: ds-font-weight($weight);
+  font-family: $ds-base-font-family;
+  letter-spacing: .4px;
+  text-rendering: optimizeLegibility;
+}
+
+@mixin ds-button-text-style($weight: semibold) {
+  font-size:   ds-font-size(button);
+  line-height: ds-line-height(button);
+  font-weight: ds-font-weight($weight);
+  font-family: $ds-base-font-family;
+  text-rendering: optimizeLegibility;
+  letter-spacing: .4px;
+  text-transform: uppercase;
+}
+
+@mixin ds-overline-text-style($weight: normal) {
+  font-size:   ds-font-size(overline);
+  line-height: ds-line-height(overline);
+  font-weight: ds-font-weight($weight);
+  font-family: $ds-base-font-family;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-rendering: optimizeLegibility;
+}
+
+@mixin ds-link-text-style($weight: normal) {
+  line-height: ds-line-height(link);
+  font-weight: ds-font-weight($weight);
+  font-family: $ds-base-font-family;
+  text-rendering: optimizeLegibility;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@mixin ds-list-text-style($weight: normal) {
+  font-size:   ds-font-size(list);
+  line-height: ds-line-height(list);
+  font-weight: ds-font-weight($weight);
+  font-family: $ds-base-font-family;
+  text-rendering: optimizeLegibility;
+}

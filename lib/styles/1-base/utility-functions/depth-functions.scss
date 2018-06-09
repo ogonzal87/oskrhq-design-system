@@ -1,0 +1,25 @@
+/// Returns the shadow for the specified depth
+/// @param {String} $depth [base] - The shadow's depth.
+/// @return {List} The shadow value.
+
+@function ds-depth($depth: 100) {
+  $fetched-value: map-get($ds-shadows-data, $depth);
+
+  @if type-of($fetched-value) == list {
+    @return $fetched-value;
+  } @else {
+    @error 'Shadow variant `#{$depth}` not found. Available variants: #{available-names($ds-shadows-data)}';
+  }
+}
+/// Returns the z-index of the specified element.
+/// @param {String} $element - The key for the element.
+/// @param {Map} $context - The map in which to search for the element.
+/// @return {Number} The z-index for the element.
+@function ds-z-index($element, $context: $ds-global-elements) {
+  $index: map-get($context, $element);
+  @if $index {
+    @return $index;
+  } @else {
+    @error 'z-index `#{$element}` in `#{$context}` not found.';
+  }
+}

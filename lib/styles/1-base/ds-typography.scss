@@ -1,419 +1,50 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i');
 $ds-base-font-family:     'Lato', sans-serif;
-$ds-base-font-size:       14px;
+$ds-base-font-size:       16px;
 $ds-base-font-weight:     400;
-
-$ds-base-text-color:      ds-color(neutral, 700);
-$ds-brand-text-color:     ds-color(primary, 400);
-$ds-secondary-text-color: ds-color(neutral, 500);
-$ds-base-link-text-color: $ds-brand-text-color;
-
-html {
-  font-family: $ds-base-font-family;
-  font-size: $ds-base-font-size;
-  font-weight: $ds-base-font-weight;
-  color: $ds-base-text-color;
-}
 
 // Data for each Type Style defined in the Style Sheet. 
 $ds-font-size-data: (
-  display4: $ds-base-font-size * 8,
-  display3: $ds-base-font-size * 4,
-  display2: $ds-base-font-size * 3.21,
-  display1: $ds-base-font-size  * 2.43,
-  headline: $ds-base-font-size * 1.72, 
-  title: $ds-base-font-size * 1.43,
-  subheading: $ds-base-font-size * 1.14,
-  body2: $ds-base-font-size,
+  H1: $ds-base-font-size * 6,
+  H2: $ds-base-font-size * 3.75,
+  H3: $ds-base-font-size * 3,
+  H4: $ds-base-font-size  * 2.125,
+  H5: $ds-base-font-size * 1.5, 
+  H6: $ds-base-font-size * 1.25,
+  subtitle2: $ds-base-font-size * 0.875,
+  subtitle1: $ds-base-font-size,
+  body2: $ds-base-font-size * 0.875,
   body1: $ds-base-font-size,
   caption: $ds-base-font-size * 0.857,
-  button: $ds-base-font-size,
+  button: $ds-base-font-size * 0.857,
+  overline: $ds-base-font-size,
   link: $ds-base-font-size,
   list: $ds-base-font-size
 );
 
 // Data for each Type Style defined in the Style Sheet. 
 $ds-line-height-data: (
-  display4: normal,
-  display3: normal,
-  display2: normal,
-  display1: normal,
-  headline: normal,
-  title: normal,
-  subheading: 1.6,
+  H1: normal,
+  H2: normal,
+  H3: normal,
+  H4: normal,
+  H5: normal,
+  H6: normal,
+  subtitle2: 1.6,
+  subtitle1: 1.6,
   body2: 1.5,
   body1: 1.5,
   caption: 1.5,
   button: 1.5,
+  overline: 1.5,
   link: 1.5,
   list: 1.5
 );
 
-
 // Data for each Type Style defined in the Style Sheet.   
 $ds-font-weight-data: (
-  display4: (
-    light: $ds-base-font-weight * .75,
-    base: $ds-base-font-weight,
-    semibold: $ds-base-font-weight * 1.5,
-    bold: $ds-base-font-weight * 2
-  ),
-  display3: (
-    base: $ds-base-font-weight,
-    semibold: $ds-base-font-weight * 1.5,
-    bold: $ds-base-font-weight * 2
-  ),
-  display2: (
-   base: $ds-base-font-weight,
-    semibold: $ds-base-font-weight * 1.5,
-    bold: $ds-base-font-weight * 2
-  ),  
-  display1: (
-    base: $ds-base-font-weight,
-    semibold: $ds-base-font-weight * 1.5,
-    bold: $ds-base-font-weight * 2
-  ),
-  headline: (
-    base: $ds-base-font-weight,
-    semibold: $ds-base-font-weight * 1.5,
-    bold: $ds-base-font-weight * 2
-  ),
-  title: (
-    base: $ds-base-font-weight,
-    semibold: $ds-base-font-weight * 1.5,
-    bold: $ds-base-font-weight * 2
-  ),
-  subheading: (
-    base: $ds-base-font-weight,
-    semibold: $ds-base-font-weight * 1.5,
-    bold: $ds-base-font-weight * 2
-  ),
-  body2: (
-    base: $ds-base-font-weight,
-    semibold: $ds-base-font-weight * 1.5,
-    bold: $ds-base-font-weight * 2
-  ),
-  body1: (
-    base: $ds-base-font-weight,
-    semibold: $ds-base-font-weight * 1.5,
-    bold: $ds-base-font-weight * 2
-  ),
-  caption: (
-    base: $ds-base-font-weight,
-    semibold: $ds-base-font-weight * 1.5,
-    bold: $ds-base-font-weight * 2
-  ),
-  button: (
-    base: $ds-base-font-weight,
-    semibold: $ds-base-font-weight * 1.5,
-    bold: $ds-base-font-weight * 2
-  ),
-  link: (
-    base: $ds-base-font-weight,
-    semibold: $ds-base-font-weight * 1.5,
-    bold: $ds-base-font-weight * 2
-  ),
-  list: (
-    base: $ds-base-font-weight,
-    semibold: $ds-base-font-weight * 1.5,
-    bold: $ds-base-font-weight * 2
-  )
+  bold: 900,
+  semibold: 600,
+  normal: 400,
+  light: 300
 );
-
-
-/////////////////////////////////////////////////////////////////////////////
-/// Utility Typographic Functions
-/////////////////////////////////////////////////////////////////////////////
-
-/// Returns the font size for a given range.
-///
-/// @param {Number} $range - The font style.
-/// @return {Number} The font-size for the text-style.
-@function ds-font-size($range) {
-  $fetched-font-size: map-get($ds-font-size-data, $range);
-  @if type-of($fetched-font-size) != null {
-    @return $fetched-font-size;
-  } @else {
-    @error 'Font size `#{$range}` not found. Available font sizes: #{available-names($ds-font-size-data)}';
-  }
-}
-
-/// Returns the line height for a given range.
-///
-/// @param {Number} $style - The font style.
-/// @return {Number} The line-height for the text-style.
-@function ds-line-height($style: normal) {
-  $fetched-line-height: map-get($ds-line-height-data, $style);
-  @if type-of($fetched-line-height) != null {
-    @return $fetched-line-height;
-  } @else {
-    @error 'Line height `#{$style}` not found. Available line heights: #{available-names($ds-line-height-data)}';
-  }
-}
-
-/// Returns the font weight for a given weight definition.
-///
-/// @param {String} $style - The font style.
-/// @param {String} $weight - The font weight.
-/// @return {Number} The font-weight for the text-weight.
-@function ds-font-weight($style, $weight: base) {
-  $fetched-font-weight: map-get(map-get($ds-font-weight-data, $style), $weight);
-  @if type-of($fetched-font-weight) != null {
-    @return $fetched-font-weight;
-  } @else {
-    @error 'Font weight `#{$style} - #{$weight}` not found. Available font weights: #{available-names($ds-font-weight-data)}';
-  }
-}
-
-/////////////////////////////////////////////////////////////////////////////
-/// Mixins for each Typographic Style. These map directly to the Website's Style Sheet.
-///////////////////////////////////////////////////////////////////////////// 
-
-@mixin ds-display4-text-style($color: $ds-base-text-color, $weight: light) {
-  font-size:   ds-font-size(display4);
-  line-height: ds-line-height(display4);
-  font-weight: ds-font-weight(display4, $weight);
-  font-family: $ds-base-font-family;
-  color: $color;
-  text-rendering: optimizeLegibility;
-}
-
-@mixin ds-display3-text-style($color: $ds-base-text-color, $weight: base) {
-  font-size:   ds-font-size(display3);
-  line-height: ds-line-height(display3);
-  font-weight: ds-font-weight(display3, $weight);
-  font-family: $ds-base-font-family;
-  color: $color;
-  text-rendering: optimizeLegibility;
-}
-
-@mixin ds-display2-text-style($color: $ds-base-text-color, $weight: base) {
-  font-size:   ds-font-size(display2);
-  line-height: ds-line-height(display2);
-  font-weight: ds-font-weight(display2, $weight);
-  font-family: $ds-base-font-family;
-  color: $color;
-  text-rendering: optimizeLegibility;
-}
-
-@mixin ds-display1-text-style($color: $ds-base-text-color, $weight: base) {
-  font-size:   ds-font-size(display1);
-  line-height: ds-line-height(display1);
-  font-weight: ds-font-weight(display1, $weight);
-  font-family: $ds-base-font-family;
-  color: $color;
-  text-rendering: optimizeLegibility;
-}
-
-@mixin ds-headline-text-style($color: $ds-base-text-color, $weight: base) {
-  font-size:   ds-font-size(headline);
-  line-height: ds-line-height(headline);
-  font-weight: ds-font-weight(headline, $weight);
-  font-family: $ds-base-font-family;
-  color: $color;
-  text-rendering: optimizeLegibility;
-}
-
-@mixin ds-title-text-style($color: $ds-base-text-color, $weight: bold) {
-  font-size:   ds-font-size(title);
-  line-height: ds-line-height(title);
-  font-weight: ds-font-weight(title, $weight);
-  font-family: $ds-base-font-family;
-  color: $color;
-  text-rendering: optimizeLegibility;
-}
-
-@mixin ds-subheading-text-style($color: $ds-base-text-color, $weight: base) {
-  font-size:   ds-font-size(subheading);
-  line-height: ds-line-height(subheading);
-  font-weight: ds-font-weight(subheading, $weight);
-  font-family: $ds-base-font-family;
-  color: $color;
-  text-rendering: optimizeLegibility;
-}
-
-@mixin ds-body2-text-style($color: $ds-base-text-color, $weight: bold) {
-  font-size:   ds-font-size(body2);
-  line-height: ds-line-height(body2);
-  font-weight: ds-font-weight(body2, $weight);
-  font-family: $ds-base-font-family;
-  color: $color;
-}
-
-@mixin ds-body1-text-style($color: $ds-base-text-color, $weight: base) {
-  font-size:   ds-font-size(body1);
-  line-height: ds-line-height(body1e);
-  font-weight: ds-font-weight(body1, $weight);
-  font-family: $ds-base-font-family;
-  color: $color;
-  text-rendering: optimizeLegibility;
-}
-
-@mixin ds-caption-text-style($color: $ds-base-text-color, $weight: base) {
-  font-size:   ds-font-size(caption);
-  line-height: ds-line-height(caption);
-  font-weight: ds-font-weight(caption, $weight);
-  font-family: $ds-base-font-family;
-  color: $color;
-  text-rendering: optimizeLegibility;
-}
-
-@mixin ds-button-text-style($color: $ds-base-text-color, $weight: base) {
-  font-size:   ds-font-size(button);
-  line-height: ds-line-height(button);
-  font-weight: ds-font-weight(button, $weight);
-  font-family: $ds-base-font-family;
-  color: $color;
-  text-rendering: optimizeLegibility;
-}
-
-@mixin ds-link-text-style($color: $ds-base-link-text-color, $weight: base) {
-  line-height: ds-line-height(link);
-  font-weight: ds-font-weight(link, $weight);
-  color:       $ds-brand-text-color;
-  font-family: $ds-base-font-family;
-  color: $ds-base-link-text-color;
-  text-rendering: optimizeLegibility;
-  cursor: pointer;
-}
-
-@mixin ds-list-text-style($color: $ds-base-text-color, $weight: base) {
-  font-size:   ds-font-size(list);
-  line-height: ds-line-height(list);
-  font-weight: ds-font-weight(list, $weight);
-  font-family: $ds-base-font-family;
-  color: $color;
-  text-rendering: optimizeLegibility;
-}
-
-
-/////////////////////////////////////////////////////////////////////////////
-/// Utility Classes
-///////////////////////////////////////////////////////////////////////////// 
-
-.ds-display4-text-style {
-  @include ds-display4-text-style();
-}
-
-.ds-display3-text-style {
-  @include ds-display3-text-style();
-}
-
-.ds-display2-text-style {
-  @include ds-display2-text-style();
-}
-
-.ds-display1-text-style {
-  @include ds-display1-text-style();
-}
-
-.ds-headline-text-style {
-  @include ds-headline-text-style();
-}
-
-.ds-title-text-style {
-  @include ds-title-text-style();
-}
-
-.ds-subheading-text-style {
-  @include ds-subheading-text-style();
-}
-
-.ds-body2-text-style {
-  @include ds-body2-text-style();
-}
-
-.ds-body1-text-style {
-  @include ds-body1-text-style();
-}
-
-.ds-caption-text-style {
-  @include ds-caption-text-style();
-}
-
-.ds-button-text-style {
-  @include ds-button-text-style();
-  text-transform: uppercase;
-}
-
-.ds-link-text-style {
-  @include ds-link-text-style();
-  text-decoration: none;
-}
-
-
-/////////////////////////////////////////////////////////////////////////////
-/// Connecting the Typographic styles defined above to Type-HTML elements
-///////////////////////////////////////////////////////////////////////////// 
-
-h1 {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  @include ds-display3-text-style();
-}
-
-h2 {
-  margin-top: 1.5rem;
-  margin-bottom: 2rem;
-  @include ds-display2-text-style();
-}
-
-h3 {
-  margin-top: 1.5rem;
-  margin-bottom: 2rem;
-  @include ds-display1-text-style();
-}
-
-h4 {
-  margin-top: 1rem;
-  margin-bottom: 2rem;
-  @include ds-headline-text-style();
-}
-
-h5 {
-  margin-top: 1rem;
-  margin-bottom: .5rem;
-  @include ds-title-text-style();
-}
-
-h6 {
-  margin-top: 1rem;
-  @include ds-subheading-text-style();
-}
-
-p {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  @include ds-body1-text-style();
-}
-
-ul, ol {
-  margin-top: .75rem;
-  margin-bottom: .75rem;
-  @include ds-list-text-style();
-}
-
-a {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  text-decoration: none;
-  @include ds-link-text-style();
-}
-
-button {
-  @include ds-button-text-style;
-  text-transform: uppercase;
-  cursor: pointer;
-
-  &:focus {
-    outline: 0;
-  }
-}
-
-code {
-  font-size: $ds-base-font-size;
-}
-
-pre {
-  margin: 2.5rem 0;
-}

@@ -11,98 +11,54 @@ $ds-spacing-data: (
   super-loose: 64px
 );
 
-/// Returns the spacing value for a given variant.
-///
-/// @param {String} $space - how much space do you need.
-/// @return {Number} The spacing for the variant in px.
-
-@function ds-space($space: base) {
-  $fetched-value: map-get($ds-spacing-data, $space);
-
-  @if type-of($fetched-value) == number {
-    @return $fetched-value;
-  } @else {
-    @error 'Spacing variant `#{$space}` not found. Available variants: #{available-names($ds-spacing-data)}';
-  }
-}
-
 ////
 /// Layout
 /// @group foundation/layout
 ////
-$ds-layout-width-data: (
-  mobile: (
-    min: 240px,
-    max: 344px
-  ), 
-  tablet: (
-    min: 345, 
-    max: 768px
-  ),
-  desktop: (
-    min: 769px
-  ),
-  left-nav: (
-    base: 240px
-  ),
-  header: (
-    base: 100%
-  ),
-  page-content-wrapper: (
-    base: 768px
-  ),
-  page-content: (
-    base: 1040px
-  )
-);
+// $ds-layout-width-data: (
+//   mobile: (
+//     min: 240px,
+//     max: 344px
+//   ), 
+//   tablet: (
+//     min: 345, 
+//     max: 768px
+//   ),
+//   desktop: (
+//     min: 769px
+//   ),
+//   left-nav: (
+//     base: 240px
+//   ),
+//   header: (
+//     base: 100%
+//   ),
+//   page-content-wrapper: (
+//     base: 768px
+//   ),
+//   page-content: (
+//     base: 1040px
+//   )
+// );
 
-$ds-container-layout-data: ( 
-  inner-spacing: (
-    none: spacing(none),
-    extra-tight: spacing(extra-tight),
-    tight: spacing(tight),
-    base: spacing(base),
-    loose: spacing(loose),
-    extra-loose: spacing(extra-loose)
-  ),
-  outer-spacing: (
-    none: spacing(none),
-    extra-tight: spacing(extra-tight),
-    tight: spacing(tight),
-    base: spacing(base),
-    loose: spacing(loose),
-    extra-loose: spacing(extra-loose)
-  )
-);
-
-/// Returns the widths of the specified column.
-/// @param {String} $name - The column name.
-/// @return {Number} The width for the column.
-
-@function ds-layout-width($name, $value: base) {
-  $fetched-value: map-get(map-get($ds-layout-width-data, $name), $value);
-
-  @if type-of($fetched-value) != null {
-    @return $fetched-value;
-  } @else {
-    @error 'Column `#{$name} - #{$value}` not found. Available columns: #{available-names($ds-layout-width-data)}';
-  }
-}
-
-/// Returns the margin and padding of a container.
-/// @param {String} $name - The column name.
-/// @return {Number} The width for the column.
-
-@function ds-container-layout($name, $value: base) {
-  $fetched-value: map-get(map-get($ds-container-layout-data, $name), $value);
-
-  @if type-of($fetched-value) != null {
-    @return $fetched-value;
-  } @else {
-    @error 'Column `#{$name} - #{$value}` not found. Available columns: #{available-names($ds-container-layout-data)}';
-  }
-}
-
+// $ds-container-layout-data: ( 
+//   inner-spacing: (
+//     none: ds-space(none),
+//     extra-tight: ds-space(extra-tight),
+//     tight: ds-space(tight),
+//     base: ds-space(base),
+//     loose: ds-space(loose),
+//     extra-loose: ds-space(extra-loose)
+//   ),
+//   outer-spacing: (
+//     none: ds-space(none),
+//     extra-tight: ds-space(extra-tight),
+//     tight: ds-space(tight),
+//     base: ds-space(base),
+//     loose: ds-space(loose),
+//     extra-loose: ds-space(extra-loose)
+//   )
+// );
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
