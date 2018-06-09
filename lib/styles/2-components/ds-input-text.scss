@@ -13,7 +13,7 @@
     font-family: $ds-base-font-family;
     border-radius: 3px;
     border: 1px ds-color(neutral, 300) solid;
-    height: ds-space(loose);
+    height: 40px;
     padding: ds-space(extra-tight) ds-space(tight);
 
     &:focus {

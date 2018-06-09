@@ -75,7 +75,8 @@ OSKRHQ.DS uses Lato as it Font Family with specific typographic styles that defi
 * H4
 * H5
 * H6
-* subtitle1
+* Subtitle1
+* Subtitle2
 * Body2
 * Body1
 * Caption

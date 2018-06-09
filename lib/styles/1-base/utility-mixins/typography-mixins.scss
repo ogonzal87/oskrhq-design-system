@@ -79,7 +79,7 @@
 
 @mixin ds-body1-text-style($weight: normal) {
   font-size:   ds-font-size(body1);
-  line-height: ds-line-height(body1e);
+  line-height: ds-line-height(body1);
   font-weight: ds-font-weight($weight);
   font-family: $ds-base-font-family;
   letter-spacing: 1px;
