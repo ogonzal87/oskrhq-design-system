@@ -1,14 +1,12 @@
-$ds-base-grid-point-system: $ds-base-font-size;
-
 $ds-spacing-data: (
   none: 0,                           
-  extra-tight: 4px,
-  tight:       8px,
-  base:        16px,
-  bit-loose:   24px,
-  loose:       32px,
-  extra-loose: 48px,
-  super-loose: 64px
+  extra-tight: $ds-theme-base-point-grid / 4,
+  tight:       $ds-theme-base-point-grid,
+  base:        $ds-theme-base-point-grid * 2,
+  bit-loose:   $ds-theme-base-point-grid * 3,
+  loose:       $ds-theme-base-point-grid * 4,
+  extra-loose: $ds-theme-base-point-grid * 6,
+  super-loose: $ds-theme-base-point-grid * 8
 );
 
 ////

@@ -23,9 +23,6 @@ $ds-base-link-text-color: $ds-brand-text-color;
 
 html {
   background-color: $app-background-color;
-  font-family: $ds-base-font-family;
-  font-size: $ds-base-font-size;
-  font-weight: $ds-base-font-weight;
   color: $ds-base-text-color;
 }
 
@@ -158,7 +155,7 @@ button {
 }
 
 code {
-  font-size: $ds-base-font-size;
+  font-size: $ds-theme-base-font-size;
 }
 
 pre {

@@ -1,0 +1,45 @@
+// Data for each Type Style defined in the Style Sheet. 
+$ds-font-size-data: (
+  H1: $ds-theme-base-font-size * 6,
+  H2: $ds-theme-base-font-size * 3.75,
+  H3: $ds-theme-base-font-size * 3,
+  H4: $ds-theme-base-font-size  * 2.125,
+  H5: $ds-theme-base-font-size * 1.5, 
+  H6: $ds-theme-base-font-size * 1.25,
+  subtitle2: $ds-theme-base-font-size * 0.875,
+  subtitle1: $ds-theme-base-font-size,
+  body2: $ds-theme-base-font-size * 0.875,
+  body1: $ds-theme-base-font-size,
+  caption: $ds-theme-base-font-size * 0.857,
+  button: $ds-theme-base-font-size * 0.857,
+  overline: $ds-theme-base-font-size * 0.857,
+  link: $ds-theme-base-font-size,
+  list: $ds-theme-base-font-size
+);
+
+// Data for each Type Style defined in the Style Sheet. 
+$ds-line-height-data: (
+  H1: normal,
+  H2: normal,
+  H3: normal,
+  H4: normal,
+  H5: normal,
+  H6: normal,
+  subtitle2: 1.6,
+  subtitle1: 1.6,
+  body2: 1.5,
+  body1: 1.5,
+  caption: 1.5,
+  button: 1.5,
+  overline: 1.5,
+  link: 1.5,
+  list: 1.5
+);
+
+// Data for each Type Style defined in the Style Sheet.   
+$ds-font-weight-data: (
+  bold: 900,
+  semibold: 600,
+  normal: 400,
+  light: 300
+);

@@ -1,0 +1,112 @@
+/**
+OSKRHQ.DS Default Theme
+Hi! 👋🏼  
+Below, you will find the default theme for this Design System. 
+However, you can modify the theme's styling values with your own
+and what the UI change magically!
+*/
+
+// Import whatever Font Family you would like.
+@import url('https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i');
+
+/**
+Color Palette
+Change these color values below to your brand colors.
+You can use `null` as a value if you do not have 
+that color.
+*/
+// Brand - Primary
+$ds-theme-color-primary-700: #20205E;
+$ds-theme-color-primary-600: #31318E;
+$ds-theme-color-primary-500: #4545C9;
+$ds-theme-color-primary-400: #5252ED;
+$ds-theme-color-primary-300: #6B6BEF;
+$ds-theme-color-primary-200: #9797F4;
+$ds-theme-color-primary-100: #B9B9F7;
+
+// Brand - Secondary 
+$ds-theme-color-secondary-700: #493564;
+$ds-theme-color-secondary-600: #6E4F96;
+$ds-theme-color-secondary-500: #9C71D5;
+$ds-theme-color-secondary-400: #B885FB;
+$ds-theme-color-secondary-300: #C297FB;
+$ds-theme-color-secondary-200: #D4B5FC;
+$ds-theme-color-secondary-100: #E2CEFD;
+
+// Brand - Tertiary 
+$ds-theme-color-tertiary-700: #174265;
+$ds-theme-color-tertiary-600: #226398;
+$ds-theme-color-tertiary-500: #318DD8;
+$ds-theme-color-tertiary-400: #3AA6FE;
+$ds-theme-color-tertiary-300: #57B3FE;
+$ds-theme-color-tertiary-200: #88C9FE;
+$ds-theme-color-tertiary-100: #B0DBFE;
+
+//Neutral - Used for text, borders, shadows, background, etc
+$ds-theme-color-neutral-700: #2F3946;
+$ds-theme-color-neutral-600: #828890;
+$ds-theme-color-neutral-500: #697489;
+$ds-theme-color-neutral-400: #C0C3C7;
+$ds-theme-color-neutral-300: #E0E2E4;
+$ds-theme-color-neutral-200: #EAEBEC;
+$ds-theme-color-neutral-100: #FFFFFF;
+
+// Success - Used to communicate status or feedback to the user 
+$ds-theme-color-success-700: #15502E;
+$ds-theme-color-success-600: #1F7845;
+$ds-theme-color-success-500: #2DAA61;
+$ds-theme-color-success-400: #35C873;
+$ds-theme-color-success-300: #53D087;
+$ds-theme-color-success-200: #85DEAB;
+$ds-theme-color-success-100: #AEE9C7;
+// Danger - Used to communicate status or feedback to the user
+$ds-theme-color-danger-700: #662222;
+$ds-theme-color-danger-600: #993333;
+$ds-theme-color-danger-500: #D94949;
+$ds-theme-color-danger-400: #FF5656;
+$ds-theme-color-danger-300: #FF6F6F;
+$ds-theme-color-danger-200: #FF9999;
+$ds-theme-color-danger-100: #FFBBBB;
+// Warning - Used to communicate status or feedback to the user
+$ds-theme-color-warning-700: #654E1A;
+$ds-theme-color-warning-600: #987627;
+$ds-theme-color-warning-500: #D8A737;
+$ds-theme-color-warning-400: #FEC541;
+$ds-theme-color-warning-300: #FECD5D;
+$ds-theme-color-warning-200: #FEDC8D;
+$ds-theme-color-warning-100: #FEE7B3;
+// Info - Used to communicate status or feedback to the user
+$ds-theme-color-info-700: #1A3561;
+$ds-theme-color-info-600: #274F92;
+$ds-theme-color-info-500: #3871CF;
+$ds-theme-color-info-400: #4285F4;
+$ds-theme-color-info-300: #5E97F5;
+$ds-theme-color-info-200: #8DB5F8;
+$ds-theme-color-info-100: #B3CEFA;
+
+
+// **TYPOGRAPHY**
+// Typeface
+// Change the typeface.
+$ds-theme-font-family:      'Lato', sans-serif;
+$ds-theme-base-font-size:    16px;
+$ds-theme-base-font-weight:  400;
+
+
+// **SPACING**
+// Point-Grid System
+// Use multiples of this value to define dimensions, padding, and margin of both block and inline elements.
+$ds-theme-base-point-grid: 8px; 
+// Learn more here: https://builttoadapt.io/intro-to-the-8-point-grid-system-d2573cde8632
+
+
+// **BORDER RADIUS**
+// How round would you like your containers to be?
+$ds-theme-base-border-radius: 4px; 
+
+
+body {
+  font-family: $ds-theme-font-family;
+  font-size: $ds-theme-base-font-size;
+  font-weight: $ds-theme-base-font-weight;
+}

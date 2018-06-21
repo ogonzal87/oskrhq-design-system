@@ -1,0 +1,81 @@
+$ds-color-palette-data: (
+  neutral: (
+    700: $ds-theme-color-neutral-700,
+    600: $ds-theme-color-neutral-600,
+    500: $ds-theme-color-neutral-500,
+    400: $ds-theme-color-neutral-400,
+    300: $ds-theme-color-neutral-300,
+    200: $ds-theme-color-neutral-200,
+    000: $ds-theme-color-neutral-100
+  ),
+
+  primary: (
+    700: $ds-theme-color-primary-700,
+    600: $ds-theme-color-primary-600,
+    500: $ds-theme-color-primary-500,
+    400: $ds-theme-color-primary-400,
+    300: $ds-theme-color-primary-300,
+    200: $ds-theme-color-primary-200,
+    100: $ds-theme-color-primary-100
+  ),
+
+  secondary: (
+    700: $ds-theme-color-secondary-700,
+    600: $ds-theme-color-secondary-600,
+    500: $ds-theme-color-secondary-500,
+    400: $ds-theme-color-secondary-400,
+    300: $ds-theme-color-secondary-300,
+    200: $ds-theme-color-secondary-200,
+    100: $ds-theme-color-secondary-100
+  ),
+
+  tertiary: (
+    700: $ds-theme-color-tertiary-700,
+    600: $ds-theme-color-tertiary-600,
+    500: $ds-theme-color-tertiary-500,
+    400: $ds-theme-color-tertiary-400,
+    300: $ds-theme-color-tertiary-300,
+    200: $ds-theme-color-tertiary-200,
+    100: $ds-theme-color-tertiary-100
+  ),
+
+  info: (
+    700: $ds-theme-color-info-700,
+    600: $ds-theme-color-info-600,
+    500: $ds-theme-color-info-500,
+    400: $ds-theme-color-info-400,
+    300: $ds-theme-color-info-300,
+    200: $ds-theme-color-info-200,
+    100: $ds-theme-color-info-100
+  ),
+
+  warning: (
+    700: $ds-theme-color-warning-700,
+    600: $ds-theme-color-warning-600,
+    500: $ds-theme-color-warning-500,
+    400: $ds-theme-color-warning-400,
+    300: $ds-theme-color-warning-300,
+    200: $ds-theme-color-warning-200,
+    100: $ds-theme-color-warning-100
+  ),
+
+  danger: (
+    700: $ds-theme-color-danger-700,
+    600: $ds-theme-color-danger-600,
+    500: $ds-theme-color-danger-500,
+    400: $ds-theme-color-danger-400,
+    300: $ds-theme-color-danger-300,
+    200: $ds-theme-color-danger-200,
+    100: $ds-theme-color-danger-100
+  ),
+
+  success: (
+    700: $ds-theme-color-success-700,
+    600: $ds-theme-color-success-600,
+    500: $ds-theme-color-success-500,
+    400: $ds-theme-color-success-400,
+    300: $ds-theme-color-success-300,
+    200: $ds-theme-color-success-200,
+    100: $ds-theme-color-success-100
+  )
+);

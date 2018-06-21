@@ -91,24 +91,24 @@ Font size, font weight, and line-height have their own predictive scales.
 ### Font Size
 I use three digits to convey in size. The higher the range number, the higher the font-size. 
 ```scss
-$ds-base-font-size: 16px;
+$ds-theme-base-font-size: 16px;
 
 $ds-font-size-data: (
-  H1: $ds-base-font-size * 6,
-  H2: $ds-base-font-size * 3.75,
-  H3: $ds-base-font-size * 3,
-  H4: $ds-base-font-size  * 2.125,
-  H5: $ds-base-font-size * 1.5, 
-  H6: $ds-base-font-size * 1.25,
-  subtitle2: $ds-base-font-size * 0.875,
-  subtitle1: $ds-base-font-size,
-  body2: $ds-base-font-size * 0.875,
-  body1: $ds-base-font-size,
-  caption: $ds-base-font-size * 0.857,
-  button: $ds-base-font-size * 0.857,
-  overline: $ds-base-font-size,
-  link: $ds-base-font-size,
-  list: $ds-base-font-size
+  H1: $ds-theme-base-font-size * 6,
+  H2: $ds-theme-base-font-size * 3.75,
+  H3: $ds-theme-base-font-size * 3,
+  H4: $ds-theme-base-font-size  * 2.125,
+  H5: $ds-theme-base-font-size * 1.5, 
+  H6: $ds-theme-base-font-size * 1.25,
+  subtitle2: $ds-theme-base-font-size * 0.875,
+  subtitle1: $ds-theme-base-font-size,
+  body2: $ds-theme-base-font-size * 0.875,
+  body1: $ds-theme-base-font-size,
+  caption: $ds-theme-base-font-size * 0.857,
+  button: $ds-theme-base-font-size * 0.857,
+  overline: $ds-theme-base-font-size,
+  link: $ds-theme-base-font-size,
+  list: $ds-theme-base-font-size
 );
 ```
 
@@ -320,15 +320,17 @@ OSKRHQ.DS uses an 8-point grid system as its base for overall space. This means 
 OSKRHQ.DS provides a predictable scale for fixed space: 
 
 ```scss
+$ds-theme-base-point-grid: 8px;
+
 $ds-spacing-data: (
   none: 0,                           
-  extra-tight: 4px,
-  tight:       8px,
-  base:        16px,
-  bit-loose:   24px,
-  loose:       32px,
-  extra-loose: 48px,
-  super-loose: 64px
+  extra-tight: $ds-theme-base-point-grid / 4,
+  tight:       $ds-theme-base-point-grid,
+  base:        $ds-theme-base-point-grid * 2,
+  bit-loose:   $ds-theme-base-point-grid * 3,
+  loose:       $ds-theme-base-point-grid * 4,
+  extra-loose: $ds-theme-base-point-grid * 6,
+  super-loose: $ds-theme-base-point-grid * 8
 );
 ```
 
