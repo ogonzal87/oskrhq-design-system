@@ -28,7 +28,11 @@ ReactDOM.render(
 );
 ```
 
+## Theming
 
+It is very easy to theme the Design System to your Brand Guidelines. Just override the values on the `./lib/styles/1-themes/theme-default.scss`, or create your own following the same schema. 
+
+![Alt Text](./theming.gif)
 
 
 ## Color
