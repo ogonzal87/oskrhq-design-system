@@ -71,8 +71,8 @@ $button-text-color-dark: ds-color(primary, 600);
 $button-text-color-light: ds-color(primary, 200);
 
 .button {
-    background-color: $cool-background-color; 
-    color: ds-color-contrast($cool-background-color, $button-text-color-dark, $button-text-color-light); // returns a hex value with enough contrast for its background
+    background-color: $button-background-color; 
+    color: ds-color-contrast($button-background-color, $button-text-color-dark, $button-text-color-light); // returns a hex value with enough contrast for its background
 }
 ```
 
