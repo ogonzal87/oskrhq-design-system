@@ -9,7 +9,7 @@
   @if type-of($fetched-value) == number {
     @return $fetched-value;
   } @else {
-    @error 'Duration variant `#{$variant}` not found. Available variants: #{available-names($ds-duration-data)}';
+    @error 'Duration variant `#{$variant}` not found. Available variants: #{$ds-duration-data}';
   }
 }
 /// Returns the timing-function value for a given variant.
@@ -21,6 +21,6 @@
   @if type-of($fetched-value) == string {
     @return $fetched-value;
   } @else {
-    @error 'Easing variant `#{$variant}` not found. Available variants: #{available-names($ds-easing-data)}';
+    @error 'Easing variant `#{$variant}` not found. Available variants: #{$ds-easing-data}';
   }
 }

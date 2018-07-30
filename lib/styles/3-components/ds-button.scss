@@ -1,5 +1,64 @@
 $ds-btn-border-radius: $ds-theme-base-border-radius;
 
+// Primary Button
+$ds-btn-primary-background-color: ds-color(primary, 400);
+$ds-btn-primary-text-color-dark: ds-color(primary, 600);
+$ds-btn-primary-text-color-light: ds-color(neutral, 000);
+$ds-btn-primary-background-color--hover: ds-color(primary, 300);
+$ds-btn-primary-background-color--active: ds-color(primary, 500);
+
+// Secondary Button
+$ds-btn-secondary-background-color: ds-color(secondary, 400);
+$ds-btn-secondary-text-color-dark: ds-color(secondary, 700);
+$ds-btn-secondary-text-color-light: ds-color(neutral, 000);
+$ds-btn-secondary-background-color--hover: ds-color(secondary, 300);
+$ds-btn-secondary-background-color--active: ds-color(secondary, 500);
+$ds-btn-border-radius: $ds-theme-base-border-radius;
+
+// Primary Button
+$ds-btn-primary-background-color: ds-color(primary, 400);
+$ds-btn-primary-text-color-dark: ds-color(primary, 600);
+$ds-btn-primary-text-color-light: ds-color(neutral, 000);
+$ds-btn-primary-background-color--hover: ds-color(primary, 300);
+$ds-btn-primary-background-color--active: ds-color(primary, 500);
+
+// Secondary Button
+$ds-btn-secondary-background-color: ds-color(secondary, 400);
+$ds-btn-secondary-text-color-dark: ds-color(secondary, 700);
+$ds-btn-secondary-text-color-light: ds-color(neutral, 000);
+$ds-btn-secondary-background-color--hover: ds-color(secondary, 300);
+$ds-btn-secondary-background-color--active: ds-color(secondary, 500);
+
+// Success Button
+$ds-btn-success-background-color: ds-color(success, 400);
+$ds-btn-success-text-color-dark: ds-color(success, 600);
+$ds-btn-success-text-color-light: ds-color(neutral, 000);
+$ds-btn-success-background-color--hover: ds-color(success, 300);
+$ds-btn-success-background-color--active: ds-color(success, 500);
+
+// Info Button
+$ds-btn-info-background-color: ds-color(info, 400);
+$ds-btn-info-text-color-dark: ds-color(info, 600);
+$ds-btn-info-text-color-light: ds-color(neutral, 000);
+$ds-btn-info-background-color--hover: ds-color(info, 300);
+$ds-btn-info-background-color--active: ds-color(info, 500);
+
+// Danger Button
+$ds-btn-danger-background-color: ds-color(danger, 400);
+$ds-btn-danger-text-color-dark: ds-color(danger, 700);
+$ds-btn-danger-text-color-light: ds-color(neutral, 000);
+$ds-btn-danger-background-color--hover: ds-color(danger, 300);
+$ds-btn-danger-background-color--active: ds-color(danger, 500);
+
+// Ghost Button
+$ds-btn-ghost-background-color: transparent;
+$ds-btn-ghost-text-color: ds-color(primary, 400);
+$ds-btn-ghost-text-color-dark: ds-color(primary, 600);
+$ds-btn-ghost-text-color-light: ds-color(neutral, 000);
+$ds-btn-ghost-background-color--hover: ds-color(primary, 400);
+$ds-btn-ghost-background-color--active: ds-color(primary, 500);
+
+
 .ds-btn {
   height: ds-space(extra-loose);
   min-width: ds-space(extra-loose);
@@ -8,6 +67,7 @@ $ds-btn-border-radius: $ds-theme-base-border-radius;
   border: none;
   box-sizing: border-box;
   padding: 0 ds-space(base);
+  outline: none;
   
   &:hover {
     box-shadow: ds-depth(100);
@@ -15,88 +75,245 @@ $ds-btn-border-radius: $ds-theme-base-border-radius;
  }
 
 .ds-btn-primary {
-  color: ds-color(neutral, 000);
-  background: ds-color(primary, 400);
+  background: $ds-btn-primary-background-color;
+  color: ds-color-contrast($ds-btn-primary-background-color, $ds-btn-primary-text-color-dark, $ds-btn-primary-text-color-light);
 
-  &:hover {
-    background: ds-color(primary, 300);
+  &:hover,
+  &:focus {
+    background: $ds-btn-primary-background-color--hover;
   }
 
   &:active {
-    background: ds-color(primary, 500);
+    background: $ds-btn-primary-background-color--active;
     box-shadow: ds-depth(000);
   }
 }
 
 .ds-btn-secondary {
-  color: ds-color(neutral, 000);
-  background: ds-color(secondary, 400);
+  background: $ds-btn-secondary-background-color;
+  color: ds-color-contrast($ds-btn-secondary-background-color, $ds-btn-secondary-text-color-dark, $ds-btn-secondary-text-color-light);
 
-  &:hover {
-    background: ds-color(secondary, 300);
+  &:hover,
+  &:focus {
+    background: $ds-btn-secondary-background-color--hover;
   }
 
   &:active {
-    background: ds-color(secondary, 500);
+    background: $ds-btn-secondary-background-color--active;
     box-shadow: ds-depth(000);
   }
 }
 
 .ds-btn-success {
-  color: ds-color(success, 600);
-  background: ds-color(success, 400);
+  background: $ds-btn-success-background-color;
+  color: ds-color-contrast($ds-btn-success-background-color, $ds-btn-success-text-color-dark, $ds-btn-success-text-color-light);
 
-  &:hover {
-    background: ds-color(success, 300);
+  &:hover,
+  &:focus {
+    background: $ds-btn-success-background-color--hover;
   }
 
   &:active {
-    background: ds-color(success, 500);
-    box-shadow: ds-depth(000);
-  }
-}
-
-.ds-btn-danger {
-  color: ds-color(danger, 600);
-  background: ds-color(danger, 400);
-  
-  &:hover {
-    background: ds-color(danger, 300);
-  }
-
-  &:active {
-    background: ds-color(danger, 500);
+    background: $ds-btn-success-background-color--active;
     box-shadow: ds-depth(000);
   }
 }
 
 .ds-btn-info {
-  color: ds-color(neutral, 000);
-  background: ds-color(info, 400);
+  background: $ds-btn-info-background-color;
+  color: ds-color-contrast($ds-btn-info-background-color, $ds-btn-info-text-color-dark, $ds-btn-info-text-color-light);
 
-  &:hover {
-    background: ds-color(info, 300);
-    color: ds-color(info, 600);
+  &:hover,
+  &:focus {
+    background: $ds-btn-info-background-color--hover;
   }
 
   &:active {
-    background: ds-color(info, 500);
+    background: $ds-btn-info-background-color--active;
+    box-shadow: ds-depth(000);
+  }
+}
+
+.ds-btn-danger {
+  background: $ds-btn-danger-background-color;
+  color: ds-color-contrast($ds-btn-danger-background-color, $ds-btn-danger-text-color-dark, $ds-btn-danger-text-color-light);
+
+  &:hover,
+  &:focus {
+    background: $ds-btn-danger-background-color--hover;
+  }
+
+  &:active {
+    background: $ds-btn-danger-background-color--active;
     box-shadow: ds-depth(000);
   }
 }
 
 .ds-btn-ghost {
-  color: ds-color(primary, 600);
-  background: transparent;
+  background: $ds-btn-ghost-background-color;
+  color: $ds-btn-ghost-text-color;
   border: 2px solid ds-color(primary, 400);
 
-  &:hover {
-    background: ds-color(primary, 400);
-    color: ds-color(neutral, 000);
+  &:hover,
+  &:focus {
+    background: $ds-btn-ghost-background-color--hover;
+    color: ds-color-contrast($ds-btn-ghost-background-color--hover, $ds-btn-ghost-text-color-dark, $ds-btn-ghost-text-color-light);
   }
 
   &:active {
-    background: ds-color(primary, 500);
+    background: $ds-btn-ghost-background-color--active;
+    color: ds-color-contrast($ds-btn-ghost-background-color--active, $ds-btn-ghost-text-color-dark, $ds-btn-ghost-text-color-light);
+    box-shadow: ds-depth(000);
+  }
+}
+
+.ds-btn-small {
+  min-width: 144px;
+  max-width: 179px;
+}
+
+.ds-btn-medium {
+  max-width: 264px;
+  min-width: 180px;
+}
+
+.ds-btn-fluid {
+  width: 100%;
+}
+// Success Button
+$ds-btn-success-background-color: ds-color(success, 400);
+$ds-btn-success-text-color-dark: ds-color(success, 600);
+$ds-btn-success-text-color-light: ds-color(neutral, 000);
+$ds-btn-success-background-color--hover: ds-color(success, 300);
+$ds-btn-success-background-color--active: ds-color(success, 500);
+
+// Info Button
+$ds-btn-info-background-color: ds-color(info, 400);
+$ds-btn-info-text-color-dark: ds-color(info, 600);
+$ds-btn-info-text-color-light: ds-color(neutral, 000);
+$ds-btn-info-background-color--hover: ds-color(info, 300);
+$ds-btn-info-background-color--active: ds-color(info, 500);
+
+// Danger Button
+$ds-btn-danger-background-color: ds-color(danger, 400);
+$ds-btn-danger-text-color-dark: ds-color(danger, 700);
+$ds-btn-danger-text-color-light: ds-color(neutral, 000);
+$ds-btn-danger-background-color--hover: ds-color(danger, 300);
+$ds-btn-danger-background-color--active: ds-color(danger, 500);
+
+// Ghost Button
+$ds-btn-ghost-background-color: transparent;
+$ds-btn-ghost-text-color: ds-color(primary, 400);
+$ds-btn-ghost-text-color-dark: ds-color(primary, 600);
+$ds-btn-ghost-text-color-light: ds-color(neutral, 000);
+$ds-btn-ghost-background-color--hover: ds-color(primary, 400);
+$ds-btn-ghost-background-color--active: ds-color(primary, 500);
+
+
+.ds-btn {
+  height: ds-space(extra-loose);
+  min-width: ds-space(extra-loose);
+  transition: all ds-easing(base) ds-duration(base);
+  border-radius: $ds-btn-border-radius;
+  border: none;
+  box-sizing: border-box;
+  padding: 0 ds-space(base);
+  outline: none;
+  
+  &:hover {
+    box-shadow: ds-depth(100);
+  }
+ }
+
+.ds-btn-primary {
+  background: $ds-btn-primary-background-color;
+  color: ds-color-contrast($ds-btn-primary-background-color, $ds-btn-primary-text-color-dark, $ds-btn-primary-text-color-light);
+
+  &:hover,
+  &:focus {
+    background: $ds-btn-primary-background-color--hover;
+  }
+
+  &:active {
+    background: $ds-btn-primary-background-color--active;
+    box-shadow: ds-depth(000);
+  }
+}
+
+.ds-btn-secondary {
+  background: $ds-btn-secondary-background-color;
+  color: ds-color-contrast($ds-btn-secondary-background-color, $ds-btn-secondary-text-color-dark, $ds-btn-secondary-text-color-light);
+
+  &:hover,
+  &:focus {
+    background: $ds-btn-secondary-background-color--hover;
+  }
+
+  &:active {
+    background: $ds-btn-secondary-background-color--active;
+    box-shadow: ds-depth(000);
+  }
+}
+
+.ds-btn-success {
+  background: $ds-btn-success-background-color;
+  color: ds-color-contrast($ds-btn-success-background-color, $ds-btn-success-text-color-dark, $ds-btn-success-text-color-light);
+
+  &:hover,
+  &:focus {
+    background: $ds-btn-success-background-color--hover;
+  }
+
+  &:active {
+    background: $ds-btn-success-background-color--active;
+    box-shadow: ds-depth(000);
+  }
+}
+
+.ds-btn-info {
+  background: $ds-btn-info-background-color;
+  color: ds-color-contrast($ds-btn-info-background-color, $ds-btn-info-text-color-dark, $ds-btn-info-text-color-light);
+
+  &:hover,
+  &:focus {
+    background: $ds-btn-info-background-color--hover;
+  }
+
+  &:active {
+    background: $ds-btn-info-background-color--active;
+    box-shadow: ds-depth(000);
+  }
+}
+
+.ds-btn-danger {
+  background: $ds-btn-danger-background-color;
+  color: ds-color-contrast($ds-btn-danger-background-color, $ds-btn-danger-text-color-dark, $ds-btn-danger-text-color-light);
+
+  &:hover,
+  &:focus {
+    background: $ds-btn-danger-background-color--hover;
+  }
+
+  &:active {
+    background: $ds-btn-danger-background-color--active;
+    box-shadow: ds-depth(000);
+  }
+}
+
+.ds-btn-ghost {
+  background: $ds-btn-ghost-background-color;
+  color: $ds-btn-ghost-text-color;
+  border: 2px solid ds-color(primary, 400);
+
+  &:hover,
+  &:focus {
+    background: $ds-btn-ghost-background-color--hover;
+    color: ds-color-contrast($ds-btn-ghost-background-color--hover, $ds-btn-ghost-text-color-dark, $ds-btn-ghost-text-color-light);
+  }
+
+  &:active {
+    background: $ds-btn-ghost-background-color--active;
+    color: ds-color-contrast($ds-btn-ghost-background-color--active, $ds-btn-ghost-text-color-dark, $ds-btn-ghost-text-color-light);
     box-shadow: ds-depth(000);
   }
 }

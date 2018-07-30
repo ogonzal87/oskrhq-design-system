@@ -61,6 +61,21 @@ Applies a color from our palette to a CSS property. `$type` refers to the type o
 }
 ```
 
+#### `ds-color-contrast($background-color, $dark-color: ds-color(neutral, 700), $light-color: ds-color(neutral, 000))`
+
+Applies a color from the palette to a CSS property based on a given background color in accordance with accessibility standards. `$background-color` refers to the background color in which the foreground color is going to sit. `$dark-color` (Optional) refers to the dark color you wish to display if there is enough contrast. `$light-color` (Optional) refers to the light color you wish to display if there is enough contrast. If neither `$dark-color` or $light-color` are specified, the colors will default to `ds-color(neutral, 700)` and `ds-color(neutral, 000)` respectively.
+
+```sass
+$button-background-color: ds-color(primary, 400);
+$button-text-color-dark: ds-color(primary, 600);
+$button-text-color-light: ds-color(primary, 200);
+
+.button {
+    background-color: $cool-background-color; 
+    color: ds-color-contrast($cool-background-color, $button-text-color-dark, $button-text-color-light); // returns a hex value with enough contrast for its background
+}
+```
+
 #### Supporting Material
 * [Color in Design Ssytems](https://medium.com/eightshapes-llc/color-in-design-systems-a1c80f65fa3)
 * [The Color System](https://material.io/design/color/the-color-system.html#color-usage-palettes)

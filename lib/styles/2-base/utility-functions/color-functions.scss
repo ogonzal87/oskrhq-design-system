@@ -4,7 +4,7 @@
 /// @param {Number} $range - The darkness/lightness of the color. Defaults to base. The higher the number, the darker the color.
 /// @return {Color} The color value.
 
-@function ds-color($hue, $range: 600) {
+@function ds-color($hue, $range: 400) {
   $fetched-color: map-get(map-get($ds-color-palette-data, $hue), $range);
 
   @if map-has-key($ds-color-palette-data, $fetched-color) {
@@ -13,7 +13,48 @@
 
   @if type-of($fetched-color) == color {
     @return $fetched-color;
+  } @else if $fetched-color == null {
+    $fetched-based-color: map-get(map-get($ds-color-palette-data, $hue), 400);
+
+    @if $range <= 100 {
+      $fetched-color: lighten($fetched-based-color, 30%); 
+      @return $fetched-color;
+    } @else if $range == 200 {
+      $fetched-color: lighten($fetched-based-color, 20%); 
+      @return $fetched-color;
+    } @else if $range == 300 {
+      $fetched-color: lighten($fetched-based-color, 10%); 
+      @return $fetched-color;
+    } @else if $range == 500 {
+      $fetched-color: darken($fetched-based-color, 10%); 
+      @return $fetched-color;
+    } @else if $range == 600 {
+      $fetched-color: darken($fetched-based-color, 20%);
+      @return $fetched-color;
+    } @else if $range == 700 {
+      $fetched-color: darken($fetched-based-color, 30%); 
+      @return $fetched-color;
+    } @else {
+      @error 'The `#{$range}` could not be found. Make sure you have specify a range between 000 and 700.';
+    }
   } @else {
-    @error 'Color `#{$hue} - #{$range}` not found. Available colors: #{available-names($ds-color-palette-data)}';
+    @error 'Color `#{$hue} - #{$range}` not found. Available colors: #{$ds-color-palette-data}';
+  }
+}
+
+
+/// Returns a foreground color based on a given background-color in accordance with accessibility standards.
+///
+/// @param {Color} $background-color - The background color where the foreground will sit.
+/// @param {Color} $dark-color - The dark color you wish to display if there is enough contrast.
+/// @param {Color} $light-color - The light color you wish to display if there is enough contrast.
+/// @return {Color} The HEX color of the foreground.
+@function ds-color-contrast($background-color, $dark-color: ds-color(neutral, 700), $light-color: ds-color(neutral, 000)) {
+  @if $background-color == null {
+    @return null;
+  } @else {
+    // Based on the algorithm recommended by W3: https://www.w3.org/TR/AERT/#color-contrast
+    $yiq: (red($background-color) * 299 + green($background-color) * 587 + blue($background-color) * 114) / 1000;
+    @return if($yiq >= 128, $dark-color, $light-color);
   }
 }

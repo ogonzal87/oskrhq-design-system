@@ -6,8 +6,6 @@ However, you can modify the theme's styling values with your own
 and what the UI change magically!
 */
 
-// Import whatever Font Family you would like.
-@import url('https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i');
 
 /**
 Color Palette
@@ -88,9 +86,10 @@ $ds-theme-color-info-100: #B3CEFA;
 // **TYPOGRAPHY**
 // Typeface
 // Change the typeface.
+// Import whatever Font Family you would like.
+@import url('https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i');
 $ds-theme-font-family:      'Lato', sans-serif;
 $ds-theme-base-font-size:    16px;
-$ds-theme-base-font-weight:  400;
 
 
 // **SPACING**
@@ -103,10 +102,3 @@ $ds-theme-base-point-grid: 8px;
 // **BORDER RADIUS**
 // How round would you like your containers to be?
 $ds-theme-base-border-radius: 3px; 
-
-
-body {
-  font-family: $ds-theme-font-family;
-  font-size: $ds-theme-base-font-size;
-  font-weight: $ds-theme-base-font-weight;
-}

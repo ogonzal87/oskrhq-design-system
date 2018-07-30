@@ -1,0 +1,162 @@
+:root {
+  font-family: $ds-theme-font-family;
+  font-size: $ds-theme-base-font-size;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/////////////////////////////////////////////////////////////////////////////
+/// Utility Classes
+///////////////////////////////////////////////////////////////////////////// 
+
+$app-background-color:    ds-color(neutral, 700);
+$ds-base-text-color:      ds-color(neutral, 700);
+$ds-brand-text-color:     ds-color(primary, 400);
+$ds-secondary-text-color: ds-color(neutral, 500);
+$ds-base-link-text-color: $ds-brand-text-color;
+
+html {
+  background-color: $app-background-color;
+  color: $ds-base-text-color;
+}
+
+// Typography
+.ds-H1-text-style {
+  @include ds-H1-text-style();
+}
+
+.ds-H2-text-style {
+  @include ds-H2-text-style();
+}
+
+.ds-H3-text-style {
+  @include ds-H3-text-style();
+}
+
+.ds-H4-text-style {
+  @include ds-H4-text-style();
+}
+
+.ds-H5-text-style {
+  @include ds-H5-text-style();
+}
+
+.ds-H6-text-style {
+  @include ds-H6-text-style();
+}
+
+.ds-subtitle1-text-style {
+  @include ds-subtitle1-text-style();
+}
+
+.ds-subtitle2-text-style {
+  @include ds-subtitle2-text-style();
+}
+
+.ds-body2-text-style {
+  @include ds-body2-text-style();
+}
+
+.ds-body1-text-style {
+  @include ds-body1-text-style();
+}
+
+.ds-caption-text-style {
+  @include ds-caption-text-style();
+}
+
+.ds-overline-text-style {
+  @include ds-overline-text-style();
+  color: ds-color(neutral, 600);
+}
+
+.ds-button-text-style {
+  @include ds-button-text-style();
+}
+
+.ds-link-text-style {
+  @include ds-link-text-style();
+}
+
+
+/////////////////////////////////////////////////////////////////////////////
+/// Connecting the Typographic styles defined above to Type-HTML elements
+///////////////////////////////////////////////////////////////////////////// 
+
+h1 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  @include ds-H1-text-style();
+}
+
+h2 {
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+  @include ds-H2-text-style();
+}
+
+h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+  @include ds-H3-text-style();
+}
+
+h4 {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  @include ds-H4-text-style();
+}
+
+h5 {
+  margin-top: 1rem;
+  margin-bottom: .5rem;
+  @include ds-H5-text-style();
+}
+
+h6 {
+  margin-top: 1rem;
+  margin-bottom: .5rem;
+  @include ds-H6-text-style();
+}
+
+p {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  @include ds-body1-text-style();
+}
+
+ul, ol {
+  margin-top: .75rem;
+  margin-bottom: .75rem;
+  @include ds-list-text-style();
+}
+
+a {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  text-decoration: none;
+  color: ds-color(primary, 400);
+  @include ds-link-text-style();
+}
+
+button {
+  @include ds-button-text-style;
+  cursor: pointer;
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+code {
+  font-size: $ds-theme-base-font-size;
+}
+
+pre {
+  margin: 2.5rem 0;
+}

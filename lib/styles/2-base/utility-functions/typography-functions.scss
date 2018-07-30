@@ -7,7 +7,7 @@
   @if type-of($fetched-font-size) != null {
     @return $fetched-font-size;
   } @else {
-    @error 'Font size range `#{$range}` not found. Available font sizes: #{available-names($ds-font-size-data)}';
+    @error 'Font size range `#{$range}` not found. Available font sizes: #{$ds-font-size-data}';
   }
 }
 
@@ -20,7 +20,7 @@
   @if type-of($fetched-line-height) != null {
     @return $fetched-line-height;
   } @else {
-    @error 'Line height `#{$range}` not found. Available line heights: #{available-names($ds-line-height-data)}';
+    @error 'Line height `#{$range}` not found. Available line heights: #{$ds-line-height-data}';
   }
 }
 
@@ -33,6 +33,6 @@
   @if type-of($fetched-font-weight) != null {
     @return $fetched-font-weight;
   } @else {
-    @error 'Font weight `#{$weight}` not found. Available font weights: #{available-names($ds-font-weight-data)}';
+    @error 'Font weight `#{$weight}` not found. Available font weights: #{$ds-font-weight-data}';
   }
 }

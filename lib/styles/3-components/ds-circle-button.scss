@@ -1,8 +1,53 @@
+// Primary Button
+$ds-btn-circle-primary-background-color: ds-color(primary, 400);
+$ds-btn-circle-primary-text-color-dark: ds-color(primary, 700);
+$ds-btn-circle-primary-text-color-light: ds-color(neutral, 000);
+$ds-btn-circle-primary-background-color--hover: ds-color(primary, 300);
+$ds-btn-circle-primary-background-color--active: ds-color(primary, 500);
+
+// Secondary Button
+$ds-btn-circle-secondary-background-color: ds-color(secondary, 400);
+$ds-btn-circle-secondary-text-color-dark: ds-color(secondary, 700);
+$ds-btn-circle-secondary-text-color-light: ds-color(neutral, 000);
+$ds-btn-circle-secondary-background-color--hover: ds-color(secondary, 300);
+$ds-btn-circle-secondary-background-color--active: ds-color(secondary, 500);
+
+// Success Button
+$ds-btn-circle-success-background-color: ds-color(success, 400);
+$ds-btn-circle-success-text-color-dark: ds-color(success, 600);
+$ds-btn-circle-success-text-color-light: ds-color(neutral, 000);
+$ds-btn-circle-success-background-color--hover: ds-color(success, 300);
+$ds-btn-circle-success-background-color--active: ds-color(success, 500);
+
+// Info Button
+$ds-btn-circle-info-background-color: ds-color(info, 400);
+$ds-btn-circle-info-text-color-dark: ds-color(info, 600);
+$ds-btn-circle-info-text-color-light: ds-color(neutral, 000);
+$ds-btn-circle-info-background-color--hover: ds-color(info, 300);
+$ds-btn-circle-info-background-color--active: ds-color(info, 500);
+
+// Danger Button
+$ds-btn-circle-danger-background-color: ds-color(danger, 400);
+$ds-btn-circle-danger-text-color-dark: ds-color(danger, 700);
+$ds-btn-circle-danger-text-color-light: ds-color(neutral, 000);
+$ds-btn-circle-danger-background-color--hover: ds-color(danger, 300);
+$ds-btn-circle-danger-background-color--active: ds-color(danger, 500);
+
+// Ghost Button
+$ds-btn-circle-ghost-background-color: transparent;
+$ds-btn-circle-ghost-text-color: ds-color(primary, 400);
+$ds-btn-circle-ghost-text-color-dark: ds-color(primary, 600);
+$ds-btn-circle-ghost-text-color-light: ds-color(neutral, 000);
+$ds-btn-circle-ghost-background-color--hover: ds-color(primary, 400);
+$ds-btn-circle-ghost-background-color--active: ds-color(primary, 500);
+
+
 .ds-circle-btn {
   height: 48px;
   width: 48px;
   border-radius: 50%;
   transition: all ds-easing(base) ds-duration(base);
+  transition: box-shadow ds-easing(base) ds-duration(fast);
   border: none;
   box-sizing: border-box;
   padding: 0;
@@ -16,88 +61,94 @@
  }
 
 .ds-circle-btn-primary {
-  color: ds-color(neutral, 000);
-  background: ds-color(primary, 400);
+  background: $ds-btn-circle-primary-background-color;
+  color: ds-color-contrast($ds-btn-circle-primary-background-color, $ds-btn-circle-primary-text-color-dark, $ds-btn-circle-primary-text-color-light);
 
-  &:hover {
-    background: ds-color(primary, 300);
+  &:hover,
+  &:focus {
+    background: $ds-btn-circle-primary-background-color--hover;
   }
 
   &:active {
-    background: ds-color(primary, 500);
+    background: $ds-btn-circle-primary-background-color--active;
     box-shadow: ds-depth(000);
   }
 }
 
 .ds-circle-btn-secondary {
-  color: ds-color(neutral, 000);
-  background: ds-color(secondary, 400);
+  background: $ds-btn-circle-secondary-background-color;
+  color: ds-color-contrast($ds-btn-circle-secondary-background-color, $ds-btn-circle-secondary-text-color-dark, $ds-btn-circle-secondary-text-color-light);
 
-  &:hover {
-    background: ds-color(secondary, 300);
+  &:hover,
+  &:focus {
+    background: $ds-btn-circle-secondary-background-color--hover;
   }
 
   &:active {
-    background: ds-color(secondary, 500);
+    background: $ds-btn-circle-secondary-background-color--active;
     box-shadow: ds-depth(000);
   }
 }
 
 .ds-circle-btn-success {
-  color: ds-color(success, 600);
-  background: ds-color(success, 400);
+  background: $ds-btn-circle-success-background-color;
+  color: ds-color-contrast($ds-btn-circle-success-background-color, $ds-btn-circle-success-text-color-dark, $ds-btn-circle-success-text-color-light);
 
-  &:hover {
-    background: ds-color(success, 300);
+  &:hover,
+  &:focus {
+    background: $ds-btn-circle-success-background-color--hover;
   }
 
   &:active {
-    background: ds-color(success, 500);
-    box-shadow: ds-depth(000);
-  }
-}
-
-.ds-circle-btn-danger {
-  color: ds-color(danger, 600);
-  background: ds-color(danger, 400);
-  
-  &:hover {
-    background: ds-color(danger, 300);
-  }
-
-  &:active {
-    background: ds-color(danger, 500);
+    background: $ds-btn-circle-success-background-color--active;
     box-shadow: ds-depth(000);
   }
 }
 
 .ds-circle-btn-info {
-  color: ds-color(neutral, 000);
-  background: ds-color(info, 400);
+  background: $ds-btn-circle-info-background-color;
+  color: ds-color-contrast($ds-btn-circle-info-background-color, $ds-btn-circle-info-text-color-dark, $ds-btn-circle-info-text-color-light);
 
-  &:hover {
-    background: ds-color(info, 300);
-    color: ds-color(info, 600);
+  &:hover,
+  &:focus {
+    background: $ds-btn-circle-info-background-color--hover;
   }
 
   &:active {
-    background: ds-color(info, 500);
+    background: $ds-btn-circle-info-background-color--active;
+    box-shadow: ds-depth(000);
+  }
+}
+
+.ds-circle-btn-danger {
+  background: $ds-btn-circle-danger-background-color;
+  color: ds-color-contrast($ds-btn-circle-danger-background-color, $ds-btn-circle-danger-text-color-dark, $ds-btn-circle-danger-text-color-light);
+
+  &:hover,
+  &:focus {
+    background: $ds-btn-circle-danger-background-color--hover;
+  }
+
+  &:active {
+    background: $ds-btn-circle-danger-background-color--active;
     box-shadow: ds-depth(000);
   }
 }
 
 .ds-circle-btn-ghost {
-  color: ds-color(primary, 600);
-  background: transparent;
+  background: $ds-btn-ghost-background-color;
+  color: $ds-btn-ghost-text-color;
   border: 2px solid ds-color(primary, 400);
 
-  &:hover {
-    background: ds-color(primary, 400);
-    color: ds-color(neutral, 000);
+  &:hover,
+  &:focus {
+    background: $ds-btn-ghost-background-color--hover;
+    color: ds-color-contrast($ds-btn-ghost-background-color--hover, $ds-btn-ghost-text-color-dark, $ds-btn-ghost-text-color-light);
   }
 
   &:active {
-    background: ds-color(primary, 500);
+    background: $ds-btn-ghost-background-color--active;
+    color: ds-color-contrast($ds-btn-ghost-background-color--active, $ds-btn-ghost-text-color-dark, $ds-btn-ghost-text-color-light);
     box-shadow: ds-depth(000);
   }
 }

@@ -8,7 +8,7 @@
   @if type-of($fetched-value) == list {
     @return $fetched-value;
   } @else {
-    @error 'Shadow variant `#{$depth}` not found. Available variants: #{available-names($ds-shadows-data)}';
+    @error 'Shadow variant `#{$depth}` not found. Available variants: #{$ds-shadows-data}';
   }
 }
 /// Returns the z-index of the specified element.
