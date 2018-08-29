@@ -6,12 +6,13 @@
 @import './ds-motion.scss';
 @import './ds-typography.scss';
 @import './ds-space.scss';
-@import './ds-iconography.scss';
 
 // include scss functions
 @import './utility-functions/_functions-base.scss';
 // base mixins
 @import './utility-mixins/_mixins-base.scss';
+
+@import './ds-iconography.scss';
 
 @import './_elements/_elements.scss';
 
