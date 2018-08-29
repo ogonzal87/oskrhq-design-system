@@ -15,7 +15,7 @@ $ds-font-size-data: (
   overline: $ds-theme-base-font-size * 0.857,
   link: $ds-theme-base-font-size,
   list: $ds-theme-base-font-size
-);
+) !default;
 
 // Data for each Type Style defined in the Style Sheet. 
 $ds-line-height-data: (
@@ -34,7 +34,7 @@ $ds-line-height-data: (
   overline: 1.5,
   link: 1.5,
   list: 1.5
-);
+) !default;
 
 // Data for each Type Style defined in the Style Sheet.   
 $ds-font-weight-data: (
@@ -42,4 +42,4 @@ $ds-font-weight-data: (
   semibold: 600,
   normal: 400,
   light: 300
-);
+) !default;

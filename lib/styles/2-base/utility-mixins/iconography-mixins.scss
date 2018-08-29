@@ -1,0 +1,16 @@
+// @mixin ds-icon($size: s, $color: null) {
+//   $fetched-size: s;
+//   @if map-has-key($ds-icon-data, $size) {
+//     $fetched-size: map-get($ds-icon-data, $size);
+//   }
+
+//   height: $fetched-size;
+//   width:  $fetched-size;
+//   @if $color != null {
+//     @include icon-color($color)
+//   }  
+// }
+
+// @mixin icon-color($color: color(neutral, 800)) {
+//   fill: $color;
+// }

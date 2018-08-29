@@ -1,3 +1,6 @@
+@import './_generic/_normalize.scss';
+@import './_generic/_general-functions.scss';
+
 @import './ds-color.scss';
 @import './ds-depth.scss';
 @import './ds-motion.scss';
@@ -10,6 +13,5 @@
 // base mixins
 @import './utility-mixins/_mixins-base.scss';
 
-@import './_generic/normalize.scss';
-@import './_elements/elements.scss';
+@import './_elements/_elements.scss';
 

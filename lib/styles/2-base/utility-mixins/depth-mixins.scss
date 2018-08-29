@@ -1,1 +1,5 @@
-// No mixins yet
+@mixin ds-depth($depth: 100) {
+  -webkit-box-shadow: depth($depth);
+  -moz-box-shadow:    depth($depth);
+  box-shadow:         depth($depth);
+}

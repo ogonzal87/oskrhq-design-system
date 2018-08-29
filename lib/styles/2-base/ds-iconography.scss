@@ -27,25 +27,25 @@
 
 
 .ds-icon-tiny {
-  font-size: 16px;
+  font-size: ds-space(base);
 }
 
 .ds-icon-small {
-  font-size: 24px;
+  font-size: ds-space(bit-loose);
 }
 
 .ds-icon-medium {
-  font-size: 32px;
+  font-size: ds-space(loose);
 }
 
 .ds-icon-large {
-  font-size: 48px;
+  font-size: ds-space(extra-loose);
 }
 
 .ds-icon-xlarge {
-  font-size: 64px;
+  font-size: ds-space(super-loose);
 }
 
 .ds-icon-xxlarge {
-  font-size: 96px;
+  font-size: calc(ds-space(super-loose) * 1.5);
 }

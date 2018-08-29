@@ -1,63 +1,18 @@
+$ds-point-unit: 8px !default;
+// Point-Grid System
+// Use multiples of this value to define dimensions, padding, and margin of both block and inline elements.
+// Learn more here: https://builttoadapt.io/intro-to-the-8-point-grid-system-d2573cde8632
+
 $ds-spacing-data: (
   none: 0,                           
-  extra-tight: $ds-theme-base-point-grid / 4,
-  tight:       $ds-theme-base-point-grid,
-  base:        $ds-theme-base-point-grid * 2,
-  bit-loose:   $ds-theme-base-point-grid * 3,
-  loose:       $ds-theme-base-point-grid * 4,
-  extra-loose: $ds-theme-base-point-grid * 6,
-  super-loose: $ds-theme-base-point-grid * 8
-);
-
-////
-/// Layout
-/// @group foundation/layout
-////
-// $ds-layout-width-data: (
-//   mobile: (
-//     min: 240px,
-//     max: 344px
-//   ), 
-//   tablet: (
-//     min: 345, 
-//     max: 768px
-//   ),
-//   desktop: (
-//     min: 769px
-//   ),
-//   left-nav: (
-//     base: 240px
-//   ),
-//   header: (
-//     base: 100%
-//   ),
-//   page-content-wrapper: (
-//     base: 768px
-//   ),
-//   page-content: (
-//     base: 1040px
-//   )
-// );
-
-// $ds-container-layout-data: ( 
-//   inner-spacing: (
-//     none: ds-space(none),
-//     extra-tight: ds-space(extra-tight),
-//     tight: ds-space(tight),
-//     base: ds-space(base),
-//     loose: ds-space(loose),
-//     extra-loose: ds-space(extra-loose)
-//   ),
-//   outer-spacing: (
-//     none: ds-space(none),
-//     extra-tight: ds-space(extra-tight),
-//     tight: ds-space(tight),
-//     base: ds-space(base),
-//     loose: ds-space(loose),
-//     extra-loose: ds-space(extra-loose)
-//   )
-// );
-
+  extra-tight:  ds-rem($ds-point-unit / 2), // 4px
+  tight:        ds-rem($ds-point-unit),     // 8px
+  base:         ds-rem($ds-point-unit * 2), // 16px
+  bit-loose:    ds-rem($ds-point-unit * 3), // 24px
+  loose:        ds-rem($ds-point-unit * 4), // 32px
+  extra-loose:  ds-rem($ds-point-unit * 6), // 48px
+  super-loose:  ds-rem($ds-point-unit * 8)  // 64px
+) !default;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 // Grid System using Neat https://neat.bourbon.io/docs/latest/

@@ -1,0 +1,43 @@
+$ds-default-browser-font-size: 16px;
+
+/// Returns the value in rem for a given pixel value.
+/// @param {Number} $value - The pixel value to be converted.
+/// @return {Number} The converted value in rem.
+
+@function ds-rem($value) {
+  $unit: unit($value);
+
+  @if $value == 0 {
+    @return 0;
+  } @else if $unit == 'rem' {
+    @return $value;
+  } @else if $unit == 'px' {
+    @return $value / $ds-theme-base-font-size * 1rem;
+  } @else if $unit == 'em' {
+    @return $unit / 1em * 1rem;
+  } @else {
+    @error 'Value must be in px, em, or rem.';
+  }
+}
+
+
+/// Returns the value in ems for a given pixel value. Note that this
+/// only works for elements that have had no font-size changes.
+/// @param {Number} $value - The pixel value to be converted.
+/// @return {Number} The converted value in ems.
+
+@function ds-em($value) {
+  $unit: unit($value);
+
+  @if $value == 0 {
+    @return 0;
+  } @else if $unit == 'em' {
+    @return $value;
+  } @else if $unit == 'rem' {
+    @return $value / 1rem * 1em * ($ds-theme-base-font-size / $ds-default-browser-font-size);
+  } @else if $unit == 'px' {
+    @return $value / $ds-default-browser-font-size * 1em;
+  } @else {
+    @error 'Value must be in px, rem, or em.';
+  }
+}

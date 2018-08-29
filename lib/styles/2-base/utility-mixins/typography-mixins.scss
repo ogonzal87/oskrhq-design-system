@@ -1,3 +1,7 @@
+/// Returns desired styles for a given typography style.
+///
+/// @param {String} $weight - light, normal, semibold, bold.
+
 @mixin ds-H1-text-style($weight: light) {
   font-size:   ds-font-size(H1);
   line-height: ds-line-height(H1);
