@@ -126,6 +126,10 @@
   text-rendering: optimizeLegibility;
   text-decoration: none;
   cursor: pointer;
+  
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 @mixin ds-list-text-style($weight: normal) {
